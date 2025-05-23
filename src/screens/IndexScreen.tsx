@@ -2,7 +2,7 @@ import React from 'react';
 import globalStyles from '../styles/globalStyles';
 import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
 
-import logo from '../assets/images/logo.png';
+const logo = require('../assets/images/logo.png');
 
 export default function IndexScreen({})
 {
