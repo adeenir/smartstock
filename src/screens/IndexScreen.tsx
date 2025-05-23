@@ -24,7 +24,7 @@ export default function IndexScreen({})
                 Entrar
             </Text>
             <Div row alignItems="center" mb="md">
-                <Icon name="envelope" size={20} color="gray400" iconStyle="brand" />
+                <Icon name="envelope" size={20} color="gray400" />
                 <Input placeholder="Digite o seu email"
                        value={email}
                        onChangeText={setEmail}
@@ -47,6 +47,13 @@ export default function IndexScreen({})
                        borderBottomWidth={2}
                        borderBottomColor="gray400"
                 />
+            </Div>
+            <Div row justifyContent="flex-end" mb="lg" style={{}}>
+                <Button bg="transparent" p={1} onPress={() => {}}>
+                    <Text color="gray600" fontSize="sm">
+                        Esqueci minha senha
+                    </Text>
+                </Button>
             </Div>
             <Button block bg="green600" py="md" rounded="lg">
                 <Text color="white" fontWeight="bold">
