@@ -14,8 +14,9 @@ export default function IndexScreen({})
         <Div flex={1} justifyContent="center" bg="white" p="lg">
             <Div alignItems="center" mb="xl">
                 <Image source={logo} style={{
-                    width: 250,
-                    height: 150,
+                    width: 400,
+                    height: 300,
+                    marginTop: -200,
                     marginBottom: 16,
                 }}/>
             </Div>
