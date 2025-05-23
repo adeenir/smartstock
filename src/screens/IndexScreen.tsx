@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {Button, Div, Input, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
+import {navigate} from "../navigation/AppNavigator.tsx";
 
 const logo = require('../assets/images/logo.png');
 
@@ -16,11 +17,11 @@ export default function IndexScreen({})
                 <Image source={logo} style={{
                     width: 400,
                     height: 300,
-                    marginTop: -200,
+                    marginTop: -100,
                     marginBottom: 16,
                 }}/>
             </Div>
-            <Text fontSize="6xl" fontWeight="bold" mb="lg" color="gray900" textAlign="left">
+            <Text fontSize="6xl" fontWeight="900" mb="lg" color="gray900" textAlign="left">
                 Entrar
             </Text>
             <Div row alignItems="center" mb="md">
@@ -51,17 +52,49 @@ export default function IndexScreen({})
                 />
             </Div>
             <Div row justifyContent="flex-end" mb="lg" style={{}}>
-                <Button bg="transparent" p={1} onPress={() => {}}>
+                <Button bg="transparent" p={1} onPress={() => {
+                    navigate('ForgotPassword');
+                }}>
                     <Text color="gray600" fontSize="lg" fontWeight="bold">
                         Esqueci minha senha
                     </Text>
                 </Button>
             </Div>
-            <Button block bg="green600" py="lg" rounded="circle">
+            <Button block bg="#314401" py="lg" rounded="circle">
                 <Text color="white" fontWeight="bold" fontSize={15}>
                     Acessar
+                </Text>
+            </Button>
+            <Text fontSize="lg" mb="lg" color="gray600" textAlign="center" style={styles.ouLabel}>
+                Ou
+            </Text>
+            <Button
+                block
+                bg="gray400"
+                borderWidth={1}
+                borderColor="gray300"
+                py="lg"
+                rounded="circle"
+                mb="md"
+                row
+                style={styles.googleButton}
+                alignItems="center">
+                <Icon name="google" size={20} color="#DB4437" iconStyle="brand" style={styles.googleIcon}
+                />
+                <Text color="gray600" fontWeight="bold" fontSize={15}>
+                    Entrar com o Google
                 </Text>
             </Button>
         </Div>
     );
 }
+
+const styles = StyleSheet.create({
+    googleButton: {},
+    googleIcon: {
+        marginRight: 10,
+    },
+    ouLabel: {
+        marginTop: 10,
+    },
+});
