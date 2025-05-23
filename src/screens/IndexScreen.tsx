@@ -1,6 +1,7 @@
 import React from 'react';
-import globalStyles from '../styles/globalStyles';
-import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
+import {Image} from 'react-native';
+import {Button, Div, Input, Text} from 'react-native-magnus';
+import Icon from '@react-native-vector-icons/fontawesome6';
 
 const logo = require('../assets/images/logo.png');
 
@@ -10,75 +11,47 @@ export default function IndexScreen({})
     const [password, setPassword] = React.useState('');
 
     return (
-        <View style={globalStyles.container}>
-            <Image source={logo} style={styles.logo} />
-            <Text style={styles.label}>Entrar</Text>
-
-            <TextInput
-                style={styles.input}
-                placeholder="Digite o seu email"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                autoCapitalize="none"
+        <Div flex={1} justifyContent="center" bg="white" p="lg">
+            <Div alignItems="center" mb="xl">
+                <Image source={logo} style={{
+                    width: 250,
+                    height: 150,
+                    marginBottom: 16,
+                }}/>
+            </Div>
+            <Text fontSize="2xl" fontWeight="bold" mb="lg" color="gray900" textAlign="center">
+                Entrar
+            </Text>
+            <Div row alignItems="center" mb="md">
+                <Icon name="envelope" size={20} color="gray400" iconStyle="brand" />
+                <Input placeholder="Digite o seu email"
+                       value={email}
+                       onChangeText={setEmail}
+                       mb="md"
+                       keyboardType="email-address"
+                       autoCapitalize="none"
+                       borderWidth={0}
+                       borderBottomWidth={2}
+                       borderBottomColor="gray400"
                 />
-            <TextInput
-                style={styles.input}
-                placeholder="Digite a sua senha"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry
-                autoCapitalize="none"
+            </Div>
+            <Div row alignItems="center" mb="lg">
+                <Icon name="lock" size={20} color="gray400" iconStyle="solid" />
+                <Input placeholder="Digite a sua senha"
+                       value={password}
+                       onChangeText={setPassword}
+                       mb="md"
+                       secureTextEntry
+                       borderWidth={0}
+                       borderBottomWidth={2}
+                       borderBottomColor="gray400"
                 />
-        </View>
+            </Div>
+            <Button block bg="green600" py="md" rounded="lg">
+                <Text color="white" fontWeight="bold">
+                    Acessar
+                </Text>
+            </Button>
+        </Div>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        padding: 16,
-        backgroundColor: '#ffffff',
-    },
-    logo: {
-        width: 250,
-        height: 150,
-        alignSelf: 'center',
-        marginTop: 20,
-        marginBottom: 16,
-    },
-    label: {
-        fontFamily: 'Poppins',
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        textAlign: 'center',
-        color: '#333',
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 4,
-        padding: 10,
-        marginBottom: 10,
-        fontSize: 16,
-    },
-    forgotPassword: {
-        color: '#4CAF50',
-        textAlign: 'right',
-        marginBottom: 20,
-    },
-    button: {
-        backgroundColor: '#4CAF50',
-        padding: 15,
-        borderRadius: 8,
-        alignItems: 'center',
-        marginBottom: 10,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-});
