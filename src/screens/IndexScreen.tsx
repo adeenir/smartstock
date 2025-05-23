@@ -20,11 +20,11 @@ export default function IndexScreen({})
                     marginBottom: 16,
                 }}/>
             </Div>
-            <Text fontSize="2xl" fontWeight="bold" mb="lg" color="gray900" textAlign="center">
+            <Text fontSize="6xl" fontWeight="bold" mb="lg" color="gray900" textAlign="left">
                 Entrar
             </Text>
             <Div row alignItems="center" mb="md">
-                <Icon name="envelope" size={20} color="gray400" />
+                <Icon name="envelope" size={25} color="gray400" />
                 <Input placeholder="Digite o seu email"
                        value={email}
                        onChangeText={setEmail}
@@ -34,10 +34,11 @@ export default function IndexScreen({})
                        borderWidth={0}
                        borderBottomWidth={2}
                        borderBottomColor="gray400"
+                       fontSize={15}
                 />
             </Div>
             <Div row alignItems="center" mb="lg">
-                <Icon name="lock" size={20} color="gray400" iconStyle="solid" />
+                <Icon name="lock" size={25} color="gray400" iconStyle="solid" />
                 <Input placeholder="Digite a sua senha"
                        value={password}
                        onChangeText={setPassword}
@@ -46,17 +47,18 @@ export default function IndexScreen({})
                        borderWidth={0}
                        borderBottomWidth={2}
                        borderBottomColor="gray400"
+                       fontSize={15}
                 />
             </Div>
             <Div row justifyContent="flex-end" mb="lg" style={{}}>
                 <Button bg="transparent" p={1} onPress={() => {}}>
-                    <Text color="gray600" fontSize="sm">
+                    <Text color="gray600" fontSize="lg" fontWeight="bold">
                         Esqueci minha senha
                     </Text>
                 </Button>
             </Div>
-            <Button block bg="green600" py="md" rounded="lg">
-                <Text color="white" fontWeight="bold">
+            <Button block bg="green600" py="lg" rounded="circle">
+                <Text color="white" fontWeight="bold" fontSize={15}>
                     Acessar
                 </Text>
             </Button>
