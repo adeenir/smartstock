@@ -17,4 +17,10 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
     },
+    logoSmartStock: {
+        width: 400,
+        height: 300,
+        marginTop: -100,
+        marginBottom: 16,
+    }
 });

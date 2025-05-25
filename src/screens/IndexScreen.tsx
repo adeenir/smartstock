@@ -3,6 +3,7 @@ import {Image, StyleSheet} from 'react-native';
 import {Button, Div, Input, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {navigate} from "../navigation/AppNavigator.tsx";
+import globalStyles from "../styles/globalStyles";
 
 const logo = require('../assets/images/logo.png');
 
@@ -14,12 +15,7 @@ export default function IndexScreen({})
     return (
         <Div flex={1} justifyContent="center" bg="white" p="lg">
             <Div alignItems="center" mb="xl">
-                <Image source={logo} style={{
-                    width: 400,
-                    height: 300,
-                    marginTop: -100,
-                    marginBottom: 16,
-                }}/>
+                <Image source={logo} style={globalStyles.logoSmartStock}/>
             </Div>
             <Text fontSize="6xl" fontWeight="900" mb="lg" color="gray900" textAlign="left">
                 Entrar
@@ -85,6 +81,18 @@ export default function IndexScreen({})
                     Entrar com o Google
                 </Text>
             </Button>
+            <Div row justifyContent={"center"} mb="lg">
+                <Text fontSize="lg" color="gray600" textAlign="center">
+                    Não tem uma conta?&nbsp;
+                </Text>
+                <Button bg="transparent" p={1} onPress={() => {
+                    navigate('Register');
+                }}>
+                    <Text color="#314401" fontSize="lg" fontWeight="bold">
+                        Criar conta
+                    </Text>
+                </Button>
+            </Div>
         </Div>
     );
 }

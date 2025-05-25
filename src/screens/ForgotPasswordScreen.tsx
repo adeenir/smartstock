@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Div, Image, Input, Text} from 'react-native-magnus';
 import Icon from "@react-native-vector-icons/fontawesome6";
+import globalStyles from "../styles/globalStyles";
 
 const logo = require('../assets/images/logo.png');
 
@@ -10,12 +11,7 @@ export default function ForgotPasswordScreen({}) {
     return (
         <Div flex={1} justifyContent="center" bg="white" p="lg">
             <Div alignItems="center" mb="xl">
-                <Image source={logo} style={{
-                    width: 400,
-                    height: 300,
-                    marginTop: -200,
-                    marginBottom: 16,
-                }}/>
+                <Image source={logo} style={globalStyles.logoSmartStock}/>
             </Div>
             <Text fontSize="6xl" fontWeight="900" mb="lg" color="gray900" textAlign="left">
                 Redefinição de senha
