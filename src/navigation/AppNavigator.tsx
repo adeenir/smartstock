@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import IndexScreen from '../screens/IndexScreen.tsx';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen.tsx';
-import RegisterScreen from "../screens/RegisterScreen.tsx";
+import RegisterScreen from '../screens/RegisterScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 export const navigationRef = React.createRef<any>();

@@ -2,8 +2,8 @@ import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {Button, Div, Input, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
-import {navigate} from "../navigation/AppNavigator.tsx";
-import globalStyles from "../styles/globalStyles";
+import {navigate} from '../navigation/AppNavigator.tsx';
+import globalStyles from '../styles/globalStyles';
 
 const logo = require('../assets/images/logo.png');
 

@@ -1,7 +1,7 @@
-import {Button, Div, Image, Input, Text} from "react-native-magnus";
-import React from "react";
+import {Button, Div, Image, Input, Text} from 'react-native-magnus';
+import React from 'react';
 import Icon from '@react-native-vector-icons/fontawesome6';
-import globalStyles from "../styles/globalStyles";
+import globalStyles from '../styles/globalStyles';
 
 const logo = require('../assets/images/logo.png');
 
