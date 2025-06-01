@@ -20,7 +20,7 @@ export default StyleSheet.create({
     logoSmartStock: {
         width: 400,
         height: 300,
-        marginTop: -100,
+        marginTop: 50,
         marginBottom: 16,
-    }
+    },
 });

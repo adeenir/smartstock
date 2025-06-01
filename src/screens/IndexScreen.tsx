@@ -1,11 +1,9 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {Button, Div, Input, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {navigate} from '../navigation/AppNavigator.tsx';
-import globalStyles from '../styles/globalStyles';
-
-const logo = require('../assets/images/logo.png');
+import LogoComponent from '../components/LogoComponent.tsx';
 
 export default function IndexScreen({})
 {
@@ -13,10 +11,8 @@ export default function IndexScreen({})
     const [password, setPassword] = React.useState('');
 
     return (
-        <Div flex={1} justifyContent="center" bg="white" p="lg">
-            <Div alignItems="center" mb="xl">
-                <Image source={logo} style={globalStyles.logoSmartStock}/>
-            </Div>
+        <Div flex={1} bg="white" p="lg">
+            <LogoComponent />
             <Text fontSize="6xl" fontWeight="900" mb="lg" color="gray900" textAlign="left">
                 Entrar
             </Text>
