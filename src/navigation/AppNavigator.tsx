@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import IndexScreen from '../screens/IndexScreen.tsx';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen.tsx';
 import RegisterScreen from '../screens/RegisterScreen.tsx';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 export const navigationRef = React.createRef<any>();
@@ -19,6 +20,7 @@ export default function AppNavigator()
                 <Stack.Screen name="Index" component={IndexScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}  />
+                <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}  />
             </Stack.Navigator>
         </NavigationContainer>
     );

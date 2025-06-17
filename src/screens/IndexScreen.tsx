@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Alert} from 'react-native';
 import {Button, Div, Input, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {navigate} from '../navigation/AppNavigator.tsx';
@@ -52,7 +52,13 @@ export default function IndexScreen({})
                     </Text>
                 </Button>
             </Div>
-            <Button block bg="#314401" py="lg" rounded="circle">
+            <Button block bg="#314401" py="lg" rounded="circle" onPress={() => {
+                if (email === 'login' && password === 'senha') {
+                    navigate('Home');
+                } else {
+                    Alert.alert('Usuário ou senha inválidos!');
+                }
+            }}>
                 <Text color="white" fontWeight="bold" fontSize={15}>
                     Acessar
                 </Text>
