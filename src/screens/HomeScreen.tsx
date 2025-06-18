@@ -1,7 +1,8 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, Modal, TouchableOpacity } from 'react-native';
 import { Div, Text, Button } from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
+import SideMenu from '../components/SideMenu';
 
 const categories = [
   { name: 'Alimentos', count: 142, icon: 'apple-whole', color: '#C0392B' },
@@ -12,21 +13,28 @@ const categories = [
 ];
 
 export default function HomeScreen() {
+  const [menuVisible, setMenuVisible] = useState(false);
   return (
     <Div flex={1} bg="white">
+      <Modal visible={menuVisible} animationType="slide" transparent={true} statusBarTranslucent={true} onRequestClose={() => setMenuVisible(false)}>
+        <Div flex={1} bg="rgba(0,0,0,0.3)" flexDir="row">
+          <SideMenu />
+          <Div flex={1} onTouchEnd={() => setMenuVisible(false)} />
+        </Div>
+      </Modal>
       <Div row justifyContent="space-between" alignItems="center" p="lg">
-        <Button bg="transparent" p={1}>
+        <TouchableOpacity onPress={() => setMenuVisible(true)} style={{padding: 8}}>
           <Icon name="bars" size={20} color="#222" iconStyle="solid" />
-        </Button>
+        </TouchableOpacity>
         <Text fontWeight="bold" fontSize="xl">SMART STOCK</Text>
-        <Button bg="transparent" p={1}>
+        <TouchableOpacity style={{padding: 8, justifyContent: 'center', alignItems: 'center', height: 40, width: 40}}>
           <Icon name="magnifying-glass" size={20} color="#222" iconStyle="solid" />
-        </Button>
+        </TouchableOpacity>
       </Div>
       <Div p="lg">
-        <Text fontSize="2xl" fontWeight="bold" color="#222" mb="xs" ml="13" mt="20">Olá, Leonardo!</Text>
-        <Text fontSize="md" color="gray600" mb="xl" ml="13">Navegue através do menu lateral.</Text>
-        <Button block bg="#4B572A" h={45} mb="xl" mt="40" rounded={30} prefix={<Icon name="chart-line" size={18} color="white" iconStyle="solid" style={{marginRight:8}}/>}>
+        <Text fontSize="2xl" fontWeight="bold" color="#222" mb="xs">Olá, Leonardo!</Text>
+        <Text fontSize="md" color="gray600" mb="xl">Navegue através do menu lateral.</Text>
+        <Button block bg="#4B572A" h={45} mb="xl" rounded={30} prefix={<Icon name="chart-line" size={18} color="white" iconStyle="solid" style={{marginRight:8}}/>}>
           <Text color="white" fontWeight="bold">DASHBOARD</Text>
         </Button>
         <Div bg="#E0E0E0" rounded={20} p="lg" style={{width: '100%', maxWidth: 450}}>
