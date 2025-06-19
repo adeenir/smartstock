@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Modal, TouchableOpacity } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { ScrollView, StyleSheet, Modal, TouchableOpacity, Animated, Dimensions } from 'react-native';
 import { Div, Text, Button } from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import SideMenu from '../components/SideMenu';
 import { useNavigation } from '@react-navigation/native';
+
+const screenWidth = Dimensions.get('window').width;
 
 const categories = [
   { name: 'Alimentos', count: 142, icon: 'apple-whole', color: '#C0392B' },
@@ -17,16 +19,46 @@ export default function HomeScreen() {
   const navigation = useNavigation<any>();
   const [menuVisible, setMenuVisible] = useState(false);
   const [dashboardVisible, setDashboardVisible] = useState(false);
+  const menuAnim = useRef(new Animated.Value(-screenWidth)).current;
+
+  const openMenu = () => {
+    setMenuVisible(true);
+    Animated.timing(menuAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const closeMenu = () => {
+    Animated.timing(menuAnim, {
+      toValue: -screenWidth,
+      duration: 300,
+      useNativeDriver: false,
+    }).start(() => setMenuVisible(false));
+  };
+
   return (
     <Div flex={1} bg="white">
-      <Modal visible={menuVisible} animationType="slide" transparent={true} statusBarTranslucent={true} onRequestClose={() => setMenuVisible(false)}>
-        <Div flex={1} bg="rgba(0,0,0,0.3)" flexDir="row">
-          <SideMenu />
-          <Div flex={1} onTouchEnd={() => setMenuVisible(false)} />
+      {menuVisible && (
+        <Div style={StyleSheet.absoluteFill} bg="rgba(0,0,0,0.3)">
+          <Animated.View style={{
+            width: 250,
+            height: '100%',
+            backgroundColor: 'white',
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            transform: [{ translateX: menuAnim }],
+            zIndex: 99
+          }}>
+            <SideMenu />
+          </Animated.View>
+          <TouchableOpacity onPress={closeMenu} style={{ flex: 1 }} />
         </Div>
-      </Modal>
+      )}
       <Div row justifyContent="space-between" alignItems="center" p="lg">
-        <TouchableOpacity onPress={() => setMenuVisible(true)} style={{padding: 8}}>
+        <TouchableOpacity onPress={openMenu} style={{ padding: 8 }}>
           <Icon name="bars" size={20} color="#222" iconStyle="solid" />
         </TouchableOpacity>
         <Text fontWeight="bold" fontSize="xl">SMART STOCK</Text>
