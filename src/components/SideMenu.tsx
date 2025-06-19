@@ -27,7 +27,7 @@ export default function SideMenu() {
         </Div>
         <Div bg="#2C3408" rounded={10} p="md" mb="md">
           <Text color="white" fontWeight="bold" fontSize="xs" mb="sm">MINHA CONTA</Text>
-          <Button bg="transparent" row alignItems="center" mb="sm">
+          <Button bg="transparent" row alignItems="center" mb="sm" onPress={() => navigation.navigate('MyAccount')}>
             <Icon name="user" size={18} color="white" iconStyle="regular" style={{ marginRight: 12 }} />
             <Text color="white" fontSize="md">Minha conta</Text>
           </Button>
