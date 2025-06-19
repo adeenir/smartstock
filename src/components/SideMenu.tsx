@@ -31,7 +31,7 @@ export default function SideMenu() {
             <Icon name="user" size={18} color="white" iconStyle="regular" style={{ marginRight: 12 }} />
             <Text color="white" fontSize="md">Minha conta</Text>
           </Button>
-          <Button bg="transparent" row alignItems="center">
+          <Button bg="transparent" row alignItems="center" onPress={() => navigation.navigate('Password')}>
             <Icon name="key" size={18} color="white" iconStyle="solid" style={{ marginRight: 12 }} />
             <Text color="white" fontSize="md">Alterar senha</Text>
           </Button>

@@ -12,6 +12,7 @@ import ProductCodeInputScreen from '../screens/ProductCodeInputScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import RecipesScreen from '../screens/RecipesScreen';
 import MyAccountScreen from '../screens/MyAccountScreen.tsx';
+import PasswordScreen from '../screens/PasswordScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 export const navigationRef = React.createRef<any>();
@@ -35,6 +36,7 @@ export default function AppNavigator()
                 <Stack.Screen name="Alerts" component={AlertsScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Recipes" component={RecipesScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="MyAccount" component={MyAccountScreen} options={{ headerShown: false }}  />
+                <Stack.Screen name="Password" component={PasswordScreen} options={{ headerShown: false }}  />
             </Stack.Navigator>
         </NavigationContainer>
     );
