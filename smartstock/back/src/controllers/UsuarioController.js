@@ -47,7 +47,7 @@ module.exports = {
       if (!usuario) return res.status(404).json({ error: "Usuário não encontrado" });
 
       await usuario.destroy();
-      return res.json({ message: "Usuário deletado com sucesso" });
+      return res.json({ message: "Usuário excluído com sucesso" });
     } catch (err) {
       return res.status(400).json({ error: err.message });
     }
