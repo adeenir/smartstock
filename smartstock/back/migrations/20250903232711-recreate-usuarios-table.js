@@ -26,8 +26,13 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    // Remove as colunas adicionadas no up
-    await queryInterface.removeColumn('Usuarios', 'resetToken');
-    await queryInterface.removeColumn('Usuarios', 'resetTokenExpiration');
+    // Remove as colunas adicionadas no up, se existirem
+    const tableDesc = await queryInterface.describeTable('Usuarios');
+    if (tableDesc.resetToken) {
+      await queryInterface.removeColumn('Usuarios', 'resetToken');
+    }
+    if (tableDesc.resetTokenExpiration) {
+      await queryInterface.removeColumn('Usuarios', 'resetTokenExpiration');
+    }
   },
 };
