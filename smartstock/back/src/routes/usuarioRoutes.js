@@ -8,4 +8,8 @@ router.get("/:id", usuarioController.buscarPorCodigo);
 router.put("/:id", usuarioController.atualizar);
 router.delete("/:id", usuarioController.deletar);
 
+router.post("/login", usuarioController.login);
+router.post("/redefinir-senha", usuarioController.resetPassword);
+router.post("/atualizar-senha", usuarioController.updatePassword);
+
 module.exports = router;

@@ -14,6 +14,7 @@ import RecipesScreen from '../screens/RecipesScreen';
 import MyAccountScreen from '../screens/MyAccountScreen.tsx';
 import PasswordScreen from '../screens/PasswordScreen.tsx';
 import SettingsScreen from '../screens/SettingsScreen.tsx';
+import ResetPasswordScreen from '../screens/ResetPasswordScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 export const navigationRef = React.createRef<any>();
@@ -39,6 +40,7 @@ export default function AppNavigator()
                 <Stack.Screen name="MyAccount" component={MyAccountScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Password" component={PasswordScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }}  />
+                <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );

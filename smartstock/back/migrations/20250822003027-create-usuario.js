@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       email: {
         type: Sequelize.STRING,
@@ -20,6 +21,14 @@ module.exports = {
       senha: {
         type: Sequelize.STRING,
         allowNull: false
+      },
+      resetToken: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      resetTokenExpiration: {
+        type: Sequelize.DATE,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,
