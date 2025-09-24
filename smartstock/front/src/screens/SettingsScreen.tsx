@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, Switch, TouchableOpacity} from 'react-native';
 import {Div, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import BottomNavBar from '../components/BottomNavBar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SettingsScreen() {
   const navigation = useNavigation<StackNavigationProp<any>>();
+
   const [toggles, setToggles] = useState({
     notificacoes: true,
     vencimentos: true,
@@ -16,9 +18,28 @@ export default function SettingsScreen() {
     camera: true,
   });
 
+  const [user, setUser] = useState<{nome?: string; email?: string} | null>(
+    null,
+  );
+
   const handleToggle = (key: keyof typeof toggles) => {
     setToggles({...toggles, [key]: !toggles[key]});
   };
+
+  useEffect(() => {
+    const carregarUsuario = async () => {
+      try {
+        const usuarioString = await AsyncStorage.getItem('user');
+        if (usuarioString) {
+          setUser(JSON.parse(usuarioString));
+        }
+      } catch (error) {
+        console.error('Erro ao carregar usuário:', error);
+      }
+    };
+
+    carregarUsuario();
+  }, []);
 
   return (
     <Div flex={1} bg="white" p="lg">
@@ -32,42 +53,43 @@ export default function SettingsScreen() {
         Configurações
       </Text>
 
-    <Div pt="md" mt="2xl">
-      <Text fontWeight="bold" mb="md">
-        Ajustes gerais
-      </Text>
-      {[
-        {label: 'Notificações gerais', key: 'notificacoes'},
-        {label: 'Alertas de vencimentos', key: 'vencimentos'},
-        {label: 'Alertas de prazo de vencimento', key: 'prazo'},
-        {label: 'Sugestões de receitas', key: 'sugestoes'},
-        {label: 'Habilitar câmera', key: 'camera'},
-      ].map(({label, key}) => (
-        <Div
-          key={key}
-          row
-          alignItems="center"
-          justifyContent="flex-start"
-          mb="sm"
-          px="md"
-          py="sm"
-          rounded={20}
-          borderWidth={1}
-          borderColor="#ccc"
-        >
-          <Switch
-            value={toggles[key as keyof typeof toggles]}
-            onValueChange={() => handleToggle(key as keyof typeof toggles)}
-            trackColor={{false: '#ccc', true: '#4B572A'}}
-            thumbColor={
-              toggles[key as keyof typeof toggles] ? '#2C3408' : '#888'
-            }
-          />
-          <Text ml="md">{label}</Text>
-        </Div>
-      ))}
-    </Div>
+      {/* Ajustes Gerais */}
+      <Div pt="md" mt="2xl">
+        <Text fontWeight="bold" mb="md">
+          Ajustes gerais
+        </Text>
+        {[
+          {label: 'Notificações gerais', key: 'notificacoes'},
+          {label: 'Alertas de vencimentos', key: 'vencimentos'},
+          {label: 'Alertas de prazo de vencimento', key: 'prazo'},
+          {label: 'Sugestões de receitas', key: 'sugestoes'},
+          {label: 'Habilitar câmera', key: 'camera'},
+        ].map(({label, key}) => (
+          <Div
+            key={key}
+            row
+            alignItems="center"
+            justifyContent="flex-start"
+            mb="sm"
+            px="md"
+            py="sm"
+            rounded={20}
+            borderWidth={1}
+            borderColor="#ccc">
+            <Switch
+              value={toggles[key as keyof typeof toggles]}
+              onValueChange={() => handleToggle(key as keyof typeof toggles)}
+              trackColor={{false: '#ccc', true: '#4B572A'}}
+              thumbColor={
+                toggles[key as keyof typeof toggles] ? '#2C3408' : '#888'
+              }
+            />
+            <Text ml="md">{label}</Text>
+          </Div>
+        ))}
+      </Div>
 
+      {/* Usuário */}
       <Div borderTopWidth={1} borderColor="#ccc" mt="lg" pt="md">
         <Text fontWeight="bold" mb="md">
           Utilizador
@@ -81,7 +103,7 @@ export default function SettingsScreen() {
                 color="#000"
                 style={{marginRight: 8}}
               />
-              <Text>Leonardo Fadani</Text>
+              <Text>{user?.nome || 'Usuário'}</Text>
             </Div>
             <Icon
               name="chevron-right"
@@ -93,6 +115,7 @@ export default function SettingsScreen() {
         </TouchableOpacity>
       </Div>
 
+      {/* Upgrade */}
       <Div borderTopWidth={1} borderColor="#ccc" mt="lg" pt="md">
         <Text fontWeight="bold" mb="md">
           Faça upgrade para o Smart Stock+
@@ -119,23 +142,31 @@ export default function SettingsScreen() {
         </TouchableOpacity>
       </Div>
 
+      {/* Tema */}
       <Div borderTopWidth={1} borderColor="#ccc" mt="lg" pt="md">
         <Text fontWeight="bold" mb="md">
           Tema
         </Text>
         <Div row alignItems="center" justifyContent="space-between" p="md">
-          <Icon name="sun" size={16} color="#000" iconStyle='solid'/>
+          <Icon name="sun" size={16} color="#000" iconStyle="solid" />
           <Text>Modo claro / Modo escuro</Text>
-          <Icon name="moon" size={16} color="#000" iconStyle='solid'/>
+          <Icon name="moon" size={16} color="#000" iconStyle="solid" />
         </Div>
       </Div>
 
-    <Div flex={1} justifyContent="flex-end">
-      <Div style={{marginBottom: 52}} row justifyContent="space-between" alignItems="center" mt="xl" mb="md">
-        <Text color="gray500">Versão</Text>
-        <Text fontWeight="bold">1.0.0</Text>
+      {/* Versão */}
+      <Div flex={1} justifyContent="flex-end">
+        <Div
+          style={{marginBottom: 52}}
+          row
+          justifyContent="space-between"
+          alignItems="center"
+          mt="xl"
+          mb="md">
+          <Text color="gray500">Versão</Text>
+          <Text fontWeight="bold">1.0.0</Text>
+        </Div>
       </Div>
-    </Div>
       <BottomNavBar />
     </Div>
   );

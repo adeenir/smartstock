@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -12,6 +12,7 @@ import {Div, Text, Button} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import SideMenu from '../components/SideMenu';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -30,6 +31,23 @@ export default function HomeScreen() {
   const menuAnim = useRef(new Animated.Value(-screenWidth)).current;
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<TextInput>(null);
+
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const storedUser = await AsyncStorage.getItem('usuario');
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        }
+      } catch (err) {
+        console.error('Erro ao carregar usuário:', err);
+      }
+    };
+
+    loadUser();
+  }, []);
 
   const openMenu = () => {
     setMenuVisible(true);
@@ -50,6 +68,7 @@ export default function HomeScreen() {
 
   return (
     <Div flex={1} bg="white">
+      {/* MENU LATERAL */}
       {menuVisible && (
         <Div style={StyleSheet.absoluteFill} bg="rgba(0,0,0,0.3)">
           <Animated.View
@@ -72,6 +91,8 @@ export default function HomeScreen() {
           <TouchableOpacity onPress={closeMenu} style={{flex: 1}} />
         </Div>
       )}
+
+      {/* HEADER */}
       <Div row justifyContent="space-between" alignItems="center" p="lg">
         <TouchableOpacity onPress={openMenu} style={{padding: 8}}>
           <Icon name="bars" size={20} color="#222" iconStyle="solid" />
@@ -101,13 +122,16 @@ export default function HomeScreen() {
           />
         </TouchableOpacity>
       </Div>
+
+      {/* CONTEÚDO */}
       <Div p="lg">
         <Text fontSize="2xl" fontWeight="bold" color="#222" mb="xs">
-          Olá, Leonardo!
+          {user ? `Olá, ${user.nome}!` : 'Olá, visitante!'}
         </Text>
         <Text fontSize="md" color="gray600" mb="40">
           Navegue através do menu lateral.
         </Text>
+
         <Button
           block
           bg="#4B572A"
@@ -128,6 +152,8 @@ export default function HomeScreen() {
             DASHBOARD
           </Text>
         </Button>
+
+        {/* CATEGORIAS */}
         <Div
           bg="#E0E0E0"
           rounded={20}
@@ -156,6 +182,8 @@ export default function HomeScreen() {
           ))}
         </Div>
       </Div>
+
+      {/* DASHBOARD MODAL */}
       <Modal
         visible={dashboardVisible}
         transparent
@@ -216,7 +244,10 @@ export default function HomeScreen() {
           </Div>
         </Div>
       </Modal>
+
       <Div style={styles.spacer} />
+
+      {/* BARRA INFERIOR */}
       <Div
         style={styles.bottomBar}
         row

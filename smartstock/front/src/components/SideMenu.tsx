@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { Div, Text, Button } from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type SideMenuProps = {
   searchQuery: string;
@@ -58,36 +59,46 @@ const MENU_SECTIONS: MenuSection[] = [
   },
 ];
 
-const UserHeader = ({ onSettingsPress }: { onSettingsPress?: () => void }) => (
-  <Div row alignItems="center" justifyContent="space-between" mb="md" mt="25">
-    <Div>
-      <Text color="white" fontWeight="bold" fontSize="xl">
-        Leonardo Fadani
-      </Text>
-      <Text color="white" opacity={0.7} fontSize="sm" mb="10">
-        Avenida Brasil, 621 - Palmitos/SC
-      </Text>
+const UserHeader = ({ onSettingsPress }: { onSettingsPress?: () => void }) => {
+  const [usuario, setUsuario] = useState<{ nome: string; email: string } | null>(null);
+
+  useEffect(() => {
+    const carregarUsuario = async () => {
+      try {
+        const userData = await AsyncStorage.getItem('usuario');
+        if (userData) {
+          setUsuario(JSON.parse(userData));
+        }
+      } catch (err) {
+        console.error('Erro ao carregar usuário:', err);
+      }
+    };
+    carregarUsuario();
+  }, []);
+
+  return (
+    <Div row alignItems="center" justifyContent="space-between" mb="md" mt="25">
+      <Div>
+        <Text color="white" fontWeight="bold" fontSize="xl">
+          {usuario ? usuario.nome : 'Usuário'}
+        </Text>
+        <Text color="white" opacity={0.7} fontSize="sm" mb="10">
+          {usuario ? usuario.email : 'email@exemplo.com'}
+        </Text>
+      </Div>
+      <Button bg="transparent" p={0} onPress={onSettingsPress}>
+        <Icon name="gear" size={20} color="white" iconStyle="solid" />
+      </Button>
     </Div>
-    <Button bg="transparent" p={0} onPress={onSettingsPress}>
-      <Icon name="gear" size={20} color="white" iconStyle="solid" />
-    </Button>
-  </Div>
-);
+  );
+};
 
 const SearchInput = ({
   searchQuery,
   setSearchQuery,
   inputRef,
 }: Pick<SideMenuProps, 'searchQuery' | 'setSearchQuery' | 'inputRef'>) => (
-  <Div
-    row
-    alignItems="center"
-    bg="transparent"
-    rounded="md"
-    px="md"
-    py="sm"
-    mb="md"
-  >
+  <Div row alignItems="center" bg="transparent" rounded="md" px="md" py="sm" mb="md">
     <Icon name="magnifying-glass" size={14} color="white" iconStyle="solid" />
     <TextInput
       ref={inputRef}
@@ -145,7 +156,6 @@ export default function SideMenu({
   inputRef,
 }: SideMenuProps) {
   const navigation = useNavigation<any>();
-
   const handleNavigate = (screen: string) => navigation.navigate(screen);
 
   return (

@@ -1,29 +1,50 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {TouchableOpacity, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Div, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import BottomNavBar from '../components/BottomNavBar';
-const fotoUsuario = require('../assets/images/foto_usuario.png');
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const nomeUsuario = 'Leonardo Augusto Fadani';
-const emailUsuario = 'leonardo.fadani@unochapeco.edu.br';
-const empresaUsuario = 'SmartStock';
-const fonteFotoUsuario = fotoUsuario;
+const fotoUsuario = require('../assets/images/foto_usuario.png');
 
 export default function UserProfileScreen() {
   const navigation = useNavigation() as any;
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const storedUser = await AsyncStorage.getItem('usuario');
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        }
+      } catch (err) {
+        console.error('Erro ao carregar usuário:', err);
+      }
+    };
+    loadUser();
+  }, []);
 
   const voltar = () => navigation.goBack();
   const alterarFoto = () => {
     /* futuramente */
   };
-  const sair = () => {
-    /* será feito? */
+  const sair = async () => {
+    try {
+      await AsyncStorage.removeItem('usuario');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Index'}],
+      });
+    } catch (err) {
+      console.error('Erro ao sair:', err);
+    }
   };
 
   return (
     <Div flex={1} bg="white">
+      {/* HEADER */}
       <Div row alignItems="center" justifyContent="space-between" p="lg">
         <TouchableOpacity
           onPress={voltar}
@@ -42,12 +63,12 @@ export default function UserProfileScreen() {
       </Div>
 
       <Div alignItems="center" mt="lg">
-        <Image source={fonteFotoUsuario} />
+        <Image source={fotoUsuario} />
         <Text mt="md" fontWeight="bold">
-          {nomeUsuario}
+          {user ? user.nome : 'Usuário'}
         </Text>
         <Text mt="xs" color="gray600">
-          {empresaUsuario}
+          {user ? user.empresa ?? 'Empresa não definida' : 'SmartStock'}
         </Text>
       </Div>
 
@@ -65,7 +86,7 @@ export default function UserProfileScreen() {
             </Text>
             <Div row alignItems="center">
               <Text fontWeight="bold" ml="lg" mr="md">
-                {nomeUsuario}
+                {user ? user.nome : '-'}
               </Text>
               <Icon
                 name="chevron-right"
@@ -89,7 +110,7 @@ export default function UserProfileScreen() {
             </Text>
             <Div row alignItems="center">
               <Text fontWeight="bold" ml="lg" mr="md">
-                {emailUsuario}
+                {user ? user.email : '-'}
               </Text>
               <Icon
                 name="chevron-right"
@@ -131,10 +152,7 @@ export default function UserProfileScreen() {
             iconStyle="solid"
             style={{marginRight: 8}}
           />
-          <Text
-            color="red"
-            fontWeight="bold"
-            onPress={() => navigation.navigate('Index')}>
+          <Text color="red" fontWeight="bold">
             Sair
           </Text>
         </Div>
