@@ -26,7 +26,7 @@ type MenuItem = {
   screen: string;
 };
 
-type MenuSection = { 
+type MenuSection = {
   section: string;
   items: MenuItem[];
 };
