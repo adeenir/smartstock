@@ -4,22 +4,30 @@ import {useNavigation} from '@react-navigation/native';
 import {Div, Text} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import BottomNavBar from '../components/BottomNavBar';
+import {useAuth} from '../context/AuthContext';
 const fotoUsuario = require('../assets/images/foto_usuario.png');
-
-const nomeUsuario = 'Leonardo Augusto Fadani';
-const emailUsuario = 'leonardo.fadani@unochapeco.edu.br';
-const empresaUsuario = 'SmartStock';
-const fonteFotoUsuario = fotoUsuario;
 
 export default function UserProfileScreen() {
   const navigation = useNavigation() as any;
+  const {user} = useAuth();
+
+  const nomeUsuario = user?.name || user?.nome || 'Usuário';
+  const emailUsuario = user?.email || user?.emailAddress || '—';
+  const empresaUsuario = user?.company || user?.empresa || 'SmartStock';
+  const fonteFotoUsuario = user?.photo ? {uri: user.photo} : fotoUsuario;
 
   const voltar = () => navigation.goBack();
   const alterarFoto = () => {
     /* futuramente */
   };
-  const sair = () => {
-    /* será feito? */
+  const {signOut} = useAuth();
+  const sair = async () => {
+    try {
+      await signOut();
+      navigation.navigate('Index');
+    } catch (err) {
+      console.warn('MyAccountScreen: failed to sign out', err);
+    }
   };
 
   return (
@@ -133,8 +141,7 @@ export default function UserProfileScreen() {
           />
           <Text
             color="red"
-            fontWeight="bold"
-            onPress={() => navigation.navigate('Index')}>
+            fontWeight="bold">
             Sair
           </Text>
         </Div>

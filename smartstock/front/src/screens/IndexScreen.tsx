@@ -5,10 +5,13 @@ import Icon from '@react-native-vector-icons/fontawesome6';
 import {navigate} from '../navigation/AppNavigator.tsx';
 import LogoComponent from '../components/LogoComponent.tsx';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useAuth} from '../context/AuthContext';
 
 export default function IndexScreen({}) {
   const [email, setEmail] = React.useState('');
   const [senha, setSenha] = React.useState('');
+
+  const {setUser} = useAuth();
 
   const handleLogin = async () => {
     try {
@@ -23,6 +26,12 @@ export default function IndexScreen({}) {
       if (response.ok) {
         await AsyncStorage.setItem('token', data.token);
         await AsyncStorage.setItem('usuario', JSON.stringify(data.usuario));
+        // update context so UI reflects logged user immediately
+        try {
+          setUser(data.usuario);
+        } catch (err) {
+          console.warn('IndexScreen: failed to set user in context', err);
+        }
 
         Alert.alert('Login realizado com sucesso!');
         navigate('Home');

@@ -3,6 +3,7 @@ import { StyleSheet, TextInput } from 'react-native';
 import { Div, Text, Button } from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import { useNavigation } from '@react-navigation/native';
+import {useAuth} from '../context/AuthContext';
 
 type SideMenuProps = {
   searchQuery: string;
@@ -58,21 +59,27 @@ const MENU_SECTIONS: MenuSection[] = [
   },
 ];
 
-const UserHeader = ({ onSettingsPress }: { onSettingsPress?: () => void }) => (
-  <Div row alignItems="center" justifyContent="space-between" mb="md" mt="25">
-    <Div>
-      <Text color="white" fontWeight="bold" fontSize="xl">
-        Leonardo Fadani
-      </Text>
-      <Text color="white" opacity={0.7} fontSize="sm" mb="10">
-        Avenida Brasil, 621 - Palmitos/SC
-      </Text>
+const UserHeader = ({ onSettingsPress }: { onSettingsPress?: () => void }) => {
+  const {user} = useAuth();
+  const name = user?.name || user?.nome || 'Usuário';
+  const address = user?.address || user?.endereco || 'Endereço não informado';
+
+  return (
+    <Div row alignItems="center" justifyContent="space-between" mb="md" mt="25">
+      <Div>
+        <Text color="white" fontWeight="bold" fontSize="xl">
+          {name}
+        </Text>
+        <Text color="white" opacity={0.7} fontSize="sm" mb="10">
+          {address}
+        </Text>
+      </Div>
+      <Button bg="transparent" p={0} onPress={onSettingsPress}>
+        <Icon name="gear" size={20} color="white" iconStyle="solid" />
+      </Button>
     </Div>
-    <Button bg="transparent" p={0} onPress={onSettingsPress}>
-      <Icon name="gear" size={20} color="white" iconStyle="solid" />
-    </Button>
-  </Div>
-);
+  );
+};
 
 const SearchInput = ({
   searchQuery,

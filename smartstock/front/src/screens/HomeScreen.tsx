@@ -11,6 +11,7 @@ import {
 import {Div, Text, Button} from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import SideMenu from '../components/SideMenu';
+import {useAuth} from '../context/AuthContext';
 import {useNavigation} from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
@@ -25,6 +26,7 @@ const categories = [
 
 export default function HomeScreen() {
   const navigation = useNavigation<any>();
+  const {user} = useAuth();
   const [menuVisible, setMenuVisible] = useState(false);
   const [dashboardVisible, setDashboardVisible] = useState(false);
   const menuAnim = useRef(new Animated.Value(-screenWidth)).current;
@@ -102,9 +104,9 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </Div>
       <Div p="lg">
-        <Text fontSize="2xl" fontWeight="bold" color="#222" mb="xs">
-          Olá, Leonardo!
-        </Text>
+          <Text fontSize="2xl" fontWeight="bold" color="#222" mb="xs">
+            Olá, {user?.name || user?.nome || 'Usuário'}!
+          </Text>
         <Text fontSize="md" color="gray600" mb="40">
           Navegue através do menu lateral.
         </Text>

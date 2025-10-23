@@ -5,9 +5,11 @@ import Icon from '@react-native-vector-icons/fontawesome6';
 import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import BottomNavBar from '../components/BottomNavBar';
+import {useAuth} from '../context/AuthContext';
 
 export default function SettingsScreen() {
   const navigation = useNavigation<StackNavigationProp<any>>();
+  const {user} = useAuth();
   const [toggles, setToggles] = useState({
     notificacoes: true,
     vencimentos: true,
@@ -81,7 +83,7 @@ export default function SettingsScreen() {
                 color="#000"
                 style={{marginRight: 8}}
               />
-              <Text>Leonardo Fadani</Text>
+              <Text>{user?.name || user?.nome || 'Usuário'}</Text>
             </Div>
             <Icon
               name="chevron-right"
