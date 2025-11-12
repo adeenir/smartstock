@@ -23,7 +23,16 @@ module.exports = (sequelize, DataTypes) => {
       preco: DataTypes.DECIMAL(10, 2),
       quantidade: DataTypes.INTEGER,
       dataValidade: DataTypes.DATEONLY,
-      categoria: DataTypes.STRING,
+      categoria: DataTypes.ENUM(
+        'Alimentos',
+        'Bebidas',
+        'Higiene',
+        'Limpeza',
+        'Frios',
+        'Congelados',
+        'Hortifruti',
+        'Outros'
+      ),
       marca: DataTypes.STRING,
       codigoBarras: DataTypes.STRING
     },
