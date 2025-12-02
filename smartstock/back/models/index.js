@@ -31,6 +31,8 @@ fs
     db[model.name] = model;
   });
 
+const Settings = require("./settings")(sequelize, Sequelize.DataTypes);
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
@@ -39,5 +41,7 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.Settings = Settings;
+db.Settings.associate(db);
 
 module.exports = db;

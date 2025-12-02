@@ -11,5 +11,6 @@ router.delete("/:id", usuarioController.deletar);
 router.post("/login", usuarioController.login);
 router.post("/redefinir-senha", usuarioController.resetPassword);
 router.post("/atualizar-senha", usuarioController.updatePassword);
+router.post("/alterar-senha", usuarioController.alterarSenha);
 
 module.exports = router;

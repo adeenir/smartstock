@@ -5,12 +5,67 @@ import Icon from '@react-native-vector-icons/fontawesome6';
 import {useNavigation} from '@react-navigation/native';
 import BottomNavBar from '../components/BottomNavBar';
 const fotoSenha = require('../assets/images/foto_senha.png');
+import { Alert, Button as RNButton } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ChangePasswordScreen() {
   const navigation = useNavigation();
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleValidate = () => {
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      Alert.alert('Preencha todos os campos');
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      Alert.alert('Nova senha e confirmação não coincidem');
+      return;
+    }
+    // Allow validating even if newPassword === currentPassword (user requested this behaviour)
+    Alert.alert('Validação OK', 'A nova senha está válida para alteração');
+  };
+
+  const handleChangePassword = async () => {
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      Alert.alert('Preencha todos os campos');
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      Alert.alert('Nova senha e confirmação não coincidem');
+      return;
+    }
+    // Allow changing to the same password per request (no bcrypt integration)
+
+    try {
+      const token = await AsyncStorage.getItem('token');
+      if (!token) {
+        Alert.alert('Não autenticado', 'Faça login novamente');
+        return;
+      }
+
+      const res = await fetch('http://10.0.2.2:3000/usuarios/alterar-senha', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ currentPassword, newPassword }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        Alert.alert('Sucesso', data.message || 'Senha alterada com sucesso');
+        navigation.goBack();
+      } else {
+        Alert.alert('Erro', data.message || 'Erro ao alterar senha');
+      }
+    } catch (err) {
+      console.error('Erro ao alterar senha', err);
+      Alert.alert('Erro', 'Erro ao conectar com o servidor');
+    }
+  };
 
   return (
     <Div flex={1} bg="white" px="xl" pt="2xl" justifyContent="space-between">
@@ -141,6 +196,14 @@ export default function ChangePasswordScreen() {
             </Div>
           </TouchableOpacity>
         </Div>
+      </Div>
+      <Div p="lg">
+        <TouchableOpacity onPress={handleValidate} style={{backgroundColor:'#314401', padding:12, borderRadius:8, alignItems:'center', marginBottom:8}}>
+          <Text color="#fff" fontWeight="bold">Validar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleChangePassword} style={{backgroundColor:'#254002', padding:12, borderRadius:8, alignItems:'center'}}>
+          <Text color="#fff" fontWeight="bold">Alterar senha</Text>
+        </TouchableOpacity>
       </Div>
       <BottomNavBar />
     </Div>

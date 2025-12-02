@@ -5,6 +5,7 @@ import Icon from '@react-native-vector-icons/fontawesome6';
 import {navigate} from '../navigation/AppNavigator.tsx';
 import LogoComponent from '../components/LogoComponent.tsx';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { DevSettings } from 'react-native';
 import {useAuth} from '../context/AuthContext';
 
 export default function IndexScreen({}) {
@@ -147,6 +148,33 @@ export default function IndexScreen({}) {
           </Text>
         </Button>
       </Div>
+      {/* Dev helper: reset stored state if app is stuck on previous screen */}
+      <Button
+        block
+        bg="transparent"
+        borderWidth={1}
+        borderColor="transparent"
+        py="sm"
+        rounded="circle"
+        onPress={async () => {
+          try {
+            await AsyncStorage.clear();
+            Alert.alert('Estado limpo', 'Dados locais removidos. O app será reiniciado.');
+            try {
+              DevSettings.reload();
+            } catch (err) {
+              // fallback: navigate to Index
+              navigate('Index');
+            }
+          } catch (err) {
+            console.error('Erro ao limpar AsyncStorage', err);
+            Alert.alert('Erro', 'Não foi possível limpar o estado local.');
+          }
+        }}>
+        <Text color="#999" fontSize={13}>
+          Reset app state (dev)
+        </Text>
+      </Button>
     </Div>
   );
 }

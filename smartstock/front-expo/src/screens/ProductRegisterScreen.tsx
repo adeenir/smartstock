@@ -149,7 +149,12 @@ export default function ProductRegisterScreen() {
 
       if (response.ok) {
         Alert.alert('Sucesso', isEditing ? 'Produto atualizado com sucesso!' : 'Produto cadastrado com sucesso!');
-        navigation.goBack();
+        // Ensure Home refreshes its data: navigate to Home (focus listener will refetch)
+        try {
+          navigation.navigate('Home');
+        } catch (err) {
+          navigation.goBack();
+        }
       } else {
         Alert.alert('Erro', data.message || 'Erro ao cadastrar produto');
       }

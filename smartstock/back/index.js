@@ -35,6 +35,10 @@ try {
   console.warn('Rotas de notificações não carregadas: ./src/routes/notificacaoRoutes não encontrada.');
 }
 
+// Rotas de configurações
+const settingsRoutes = require("./src/routes/settingsRoutes");
+app.use("/api/settings", settingsRoutes);
+
 const PORT = process.env.PORT || 3000;
 
 app.get("/api/hello", (req, res) => {

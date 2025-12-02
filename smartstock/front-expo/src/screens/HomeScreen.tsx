@@ -35,6 +35,10 @@ export default function HomeScreen() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [dashboardVisible, setDashboardVisible] = useState(false);
   const [categories, setCategories] = useState<Array<{ name: string; count: number; icon: string; color: string }>>([]);
+  const [totalInStock, setTotalInStock] = useState(0);
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [nearExpiryCount, setNearExpiryCount] = useState(0);
+  const [expiredCount, setExpiredCount] = useState(0);
   const menuAnim = useRef(new Animated.Value(-screenWidth)).current;
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<TextInput>(null);
@@ -56,28 +60,76 @@ export default function HomeScreen() {
     }).start(() => setMenuVisible(false));
   };
 
-  // Load categories counts from backend
+  // Load categories counts from backend and refresh on focus
   React.useEffect(() => {
     let mounted = true;
-    (async () => {
+
+    const fetchProducts = async () => {
       try {
         const res = await fetch(`${API_BASE_URL}/produtos`);
         const data = await res.json();
+        // Debug: log counts to help track unexpected totals
+        try {
+          console.debug('HomeScreen: fetched produtos count=', Array.isArray(data) ? data.length : 'not-array');
+          if (Array.isArray(data)) {
+            const qtys = data.map((p: any) => ({ id: p.id, nome: p.nome, quantidade: p.quantidade }));
+            console.debug('HomeScreen: product quantities sample=', qtys.slice(0, 20));
+          }
+        } catch (e) {
+          console.warn('HomeScreen debug log failed', e);
+        }
         const counts: Record<string, number> = {};
-        CATEGORIES.forEach(c => counts[c] = 0);
+        CATEGORIES.forEach(c => (counts[c] = 0));
+        // compute category counts and dashboard stats
+        let total = 0;
+        const today = new Date();
+        const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+        const nearDays = 2;
+        let near = 0;
+        let expired = 0;
+
         data.forEach((p: any) => {
           const c = p.categoria || 'Outros';
           counts[c] = (counts[c] || 0) + 1;
+          const qtd = Number(p.quantidade || p.quantia || 1) || 0;
+          total += qtd;
+          if (p.dataValidade) {
+            const parts = String(p.dataValidade).split('-');
+            const expiryDate = parts.length >= 3 ? new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])) : new Date(p.dataValidade);
+            const ed = expiryDate.getTime();
+            const days = Math.ceil((ed - todayStart) / (1000 * 60 * 60 * 24));
+            if (!isNaN(days)) {
+              if (days < 0) expired++;
+              else if (days <= nearDays) near++;
+            }
+          }
         });
+
         if (mounted) {
           setCategories(CATEGORIES.map(c => ({ name: c, count: counts[c] || 0, icon: iconMap[c] || 'box', color: '#314401' })));
+          setTotalInStock(total);
+          setTotalProducts(Array.isArray(data) ? data.length : 0);
+          setNearExpiryCount(near);
+          setExpiredCount(expired);
         }
       } catch (err) {
         console.error('Erro ao carregar categorias', err);
       }
-    })();
-    return () => { mounted = false };
-  }, []);
+    };
+
+    // initial fetch
+    fetchProducts();
+
+    // refresh when screen gains focus (e.g. after creating a product and going back)
+    const unsub = navigation.addListener('focus', () => {
+      fetchProducts();
+    });
+
+    return () => {
+      mounted = false;
+      if (unsub && typeof unsub === 'function') unsub();
+    };
+  }, [navigation]);
 
   return (
     <Div flex={1} bg="white">
@@ -218,7 +270,10 @@ export default function HomeScreen() {
                 EM ESTOQUE
               </Text>
               <Text color="green" fontSize="sm">
-                3 itens cadastrados em estoque
+                Produtos cadastrados: {totalProducts}
+              </Text>
+              <Text color="green" fontSize="sm">
+                Unidades em estoque: {totalInStock}
               </Text>
               <Div row alignItems="center" mt={4}>
                 <Div bg="green" h={32} w={4} rounded={8} mr={8} />
@@ -229,7 +284,7 @@ export default function HomeScreen() {
                 PERTO DE VENCER
               </Text>
               <Text color="#fff200" fontSize="sm">
-                1 item está a 2 dias do vencimento
+                {nearExpiryCount} item{nearExpiryCount !== 1 ? 's' : ''} próximo{nearExpiryCount !== 1 ? 's' : ''} do vencimento
               </Text>
               <Div row alignItems="center" mt={4}>
                 <Div bg="#fff200" h={32} w={4} rounded={8} mr={8} />
@@ -240,7 +295,7 @@ export default function HomeScreen() {
                 VENCIDOS
               </Text>
               <Text color="#ff3b3b" fontSize="sm">
-                2 produtos estão vencidos
+                {expiredCount} produto{expiredCount !== 1 ? 's' : ''} est{expiredCount !== 1 ? 'ão' : 'á'} vencido{expiredCount !== 1 ? 's' : ''}
               </Text>
               <Div row alignItems="center" mt={4}>
                 <Div bg="#ff3b3b" h={32} w={4} rounded={8} mr={8} />

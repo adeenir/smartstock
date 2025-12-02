@@ -116,6 +116,42 @@ class UsuarioController extends BaseController {
       return res.status(500).json({ message: "Erro ao redefinir senha" });
     }
   }
+
+  // Change password for authenticated user (requires Bearer token)
+  async alterarSenha(req, res) {
+    try {
+      const authHeader = req.headers.authorization || '';
+      const token = authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : null;
+      if (!token) return res.status(401).json({ message: 'Token não fornecido' });
+
+      let payload;
+      try {
+        payload = jwt.verify(token, process.env.JWT_SECRET || 'segredo_super_secreto');
+      } catch (err) {
+        return res.status(401).json({ message: 'Token inválido' });
+      }
+
+      const usuario = await this.modelo.findByPk(payload.id);
+      if (!usuario) return res.status(404).json({ message: 'Usuário não encontrado' });
+
+      const { currentPassword, newPassword } = req.body;
+      if (!currentPassword || !newPassword)
+        return res.status(400).json({ message: 'Campos obrigatórios' });
+
+      if (usuario.senha !== currentPassword)
+        return res.status(401).json({ message: 'Senha atual inválida' });
+
+      usuario.senha = newPassword;
+      await usuario.save();
+
+      return res.json({ message: 'Senha alterada com sucesso' });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Erro ao alterar senha' });
+    }
+  }
+
+  
 }
 
 const usuarioController = new UsuarioController();
@@ -128,4 +164,5 @@ module.exports = {
   login: usuarioController.login.bind(usuarioController),
   resetPassword: usuarioController.resetPassword.bind(usuarioController),
   updatePassword: usuarioController.updatePassword.bind(usuarioController),
+  alterarSenha: usuarioController.alterarSenha.bind(usuarioController),
 };
