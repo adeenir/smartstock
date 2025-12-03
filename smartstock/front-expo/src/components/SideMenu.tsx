@@ -11,6 +11,16 @@ type SideMenuProps = {
   inputRef: React.RefObject<TextInput | null>;
 };
 
+const staticColors = {
+  bg: '#FFFFFF',
+  text: '#000000',
+  primary: '#4B572A',
+  white: '#FFFFFF',
+  gray500: '#6B7280',
+  gray700: '#374151',
+  danger: '#E53935',
+};
+
 type FontAwesome6IconName =
   | 'bell'
   | 'user'
@@ -67,15 +77,15 @@ const UserHeader = ({ onSettingsPress }: { onSettingsPress?: () => void }) => {
   return (
     <Div row alignItems="center" justifyContent="space-between" mb="md" mt="25">
       <Div>
-        <Text color="white" fontWeight="bold" fontSize="xl">
+        <Text color={staticColors.white} fontWeight="bold" fontSize="xl">
           {name}
         </Text>
-        <Text color="white" opacity={0.7} fontSize="sm" mb="10">
+        <Text color={staticColors.white} opacity={0.7} fontSize="sm" mb="10">
           {address}
         </Text>
       </Div>
       <Button bg="transparent" p={0} onPress={onSettingsPress}>
-        <Icon name="gear" size={20} color="white" iconStyle="solid" />
+        <Icon name="gear" size={20} color={staticColors.white} iconStyle="solid" />
       </Button>
     </Div>
   );
@@ -96,6 +106,7 @@ const SearchInput = ({
     mb="md"
   >
     <Icon name="magnifying-glass" size={14} color="white" iconStyle="solid" />
+    {/* inject theme color at render time via inline style override */}
     <TextInput
       ref={inputRef}
       value={searchQuery}
@@ -152,11 +163,12 @@ export default function SideMenu({
   inputRef,
 }: SideMenuProps) {
   const navigation = useNavigation<any>();
+  // using staticColors to avoid theme provider dependency
 
   const handleNavigate = (screen: string) => navigation.navigate(screen);
 
   return (
-    <Div style={styles.container}>
+    <Div style={styles.container} bg={staticColors.primary}>
       <Div p="lg" style={{ flex: 1 }}>
         <UserHeader onSettingsPress={() => handleNavigate('Settings')} />
         <SearchInput

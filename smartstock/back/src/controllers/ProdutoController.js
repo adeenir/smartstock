@@ -103,6 +103,28 @@ class ProdutoController extends BaseController {
     }
   }
 
+  // Buscar produto por código de barras
+  async buscarPorCodigoBarras(req, res) {
+    try {
+      const { code } = req.params;
+      const produto = await Produto.findOne({
+        where: { codigoBarras: code },
+        include: [
+          { model: ImagemProduto, as: "imagens" },
+          { model: Usuario, as: "usuario", attributes: ["id", "nome", "email"] },
+        ],
+      });
+
+      if (!produto)
+        return res.status(404).json({ message: "Produto não encontrado" });
+
+      return res.json(produto);
+    } catch (erro) {
+      console.error(erro);
+      return res.status(500).json({ message: "Erro ao buscar produto por código de barras" });
+    }
+  }
+
   // Atualizar dados de um produto
   async atualizar(req, res) {
     try {
@@ -188,6 +210,7 @@ module.exports = {
   adicionar: produtoController.adicionar.bind(produtoController),
   listar: produtoController.listar.bind(produtoController),
   buscarPorCodigo: produtoController.buscarPorCodigo.bind(produtoController),
+  buscarPorCodigoBarras: produtoController.buscarPorCodigoBarras.bind(produtoController),
   atualizar: produtoController.atualizar.bind(produtoController),
   deletar: produtoController.deletar.bind(produtoController),
 };

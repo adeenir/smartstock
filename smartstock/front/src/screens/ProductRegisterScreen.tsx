@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, TouchableOpacity } from 'react-native';
 import { Div, Input, Button, Text } from 'react-native-magnus';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import { launchImageLibrary } from 'react-native-image-picker';
@@ -185,7 +185,13 @@ export default function ProductRegisterScreen() {
           borderWidth={0}
           borderBottomWidth={2}
           borderBottomColor="gray400"
+          style={{flex: 1}}
         />
+        <TouchableOpacity onPress={() => (navigation as any).navigate('BarcodeScanner')} style={{marginLeft: 8}}>
+          <Div bg="#314401" px="md" py="sm" rounded={6}>
+            <Text color="white">Escanear</Text>
+          </Div>
+        </TouchableOpacity>
       </Div>
 
       <Button block bg="#314401" py="lg" rounded="circle" onPress={selecionarImagem} mb="md">

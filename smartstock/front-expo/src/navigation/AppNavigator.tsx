@@ -10,6 +10,7 @@ import StockScreen from '../screens/StockScreen.api';
 import DashboardScreen from '../screens/DashboardScreen';
 import ProductRegisterScreen from '../screens/ProductRegisterScreen';
 import ProductCodeInputScreen from '../screens/ProductCodeInputScreen';
+import BarcodeScannerScreen from '../screens/BarcodeScannerScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import RecipesScreen from '../screens/RecipesScreen';
 import MyAccountScreen from '../screens/MyAccountScreen.tsx';
@@ -37,6 +38,7 @@ export default function AppNavigator()
                 <Stack.Screen name="Stock" component={StockScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="ProductRegister" component={ProductRegisterScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="ProductCodeInput" component={ProductCodeInputScreen} options={{ headerShown: false }}  />
+                <Stack.Screen name="BarcodeScanner" component={BarcodeScannerScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Alerts" component={AlertsScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="Recipes" component={RecipesScreen} options={{ headerShown: false }}  />
                 <Stack.Screen name="MyAccount" component={MyAccountScreen} options={{ headerShown: false }}  />

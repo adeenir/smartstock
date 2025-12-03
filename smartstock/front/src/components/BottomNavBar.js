@@ -12,7 +12,7 @@ function BottomNavBar(_a) {
         <fontawesome6_1.default name="house" size={24} color="white" iconStyle="solid"/>
       </react_native_1.TouchableOpacity>
       {!onlyHome && (<>
-          <react_native_1.TouchableOpacity style={styles.iconButton} onPress={function () { return navigation.navigate('ProductRegister'); }}>
+          <react_native_1.TouchableOpacity style={styles.iconButton} onPress={function () { return navigation.navigate('ProductCodeInput'); }}>
             <fontawesome6_1.default name="camera" size={24} color="white" iconStyle="solid"/>
           </react_native_1.TouchableOpacity>
           <react_native_1.TouchableOpacity style={styles.iconButton} onPress={function () { return navigation.navigate('Notifications'); }}>

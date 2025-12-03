@@ -9,6 +9,7 @@ interface BottomNavBarProps {
 
 export default function BottomNavBar({ onlyHome = false }: BottomNavBarProps) {
   const navigation = useNavigation<any>();
+  console.log('BottomNavBar (front) rendered');
   return (
     <View style={styles.bottomBar}>
       <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Home')}>
@@ -16,7 +17,7 @@ export default function BottomNavBar({ onlyHome = false }: BottomNavBarProps) {
       </TouchableOpacity>
       {!onlyHome && (
         <>
-          <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('ProductRegister')}>
+          <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('ProductCodeInput')}>
             <Icon name="camera" size={24} color="white" iconStyle="solid" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Notifications')}>
