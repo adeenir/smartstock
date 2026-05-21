@@ -1,0 +1,34 @@
+[
+  {
+    "categoria": "Bebidas",
+    "preco_medio": "266.2251101321585903"
+  },
+  {
+    "categoria": "Frios",
+    "preco_medio": "254.2115354330708661"
+  },
+  {
+    "categoria": "Congelados",
+    "preco_medio": "271.8278632478632479"
+  },
+  {
+    "categoria": "Higiene",
+    "preco_medio": "255.4952464788732394"
+  },
+  {
+    "categoria": "Hortifruti",
+    "preco_medio": "258.0217322834645669"
+  },
+  {
+    "categoria": "Alimentos",
+    "preco_medio": "239.8246586345381526"
+  },
+  {
+    "categoria": "Limpeza",
+    "preco_medio": "244.3126235741444867"
+  },
+  {
+    "categoria": "Outros",
+    "preco_medio": "252.7651914893617021"
+  }
+]

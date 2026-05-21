@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1039,
+    "nome": "Natural Sabonete",
+    "valor_total": "237148.17"
+  },
+  {
+    "id": 1530,
+    "nome": "Suave Arroz",
+    "valor_total": "236420.00"
+  },
+  {
+    "id": 887,
+    "nome": "Delicioso Feijão",
+    "valor_total": "235620.10"
+  },
+  {
+    "id": 126,
+    "nome": "Integral Manteiga",
+    "valor_total": "235080.30"
+  },
+  {
+    "id": 353,
+    "nome": "Premium Iogurte",
+    "valor_total": "234912.02"
+  },
+  {
+    "id": 1034,
+    "nome": "Suave Biscoito",
+    "valor_total": "233638.25"
+  },
+  {
+    "id": 1668,
+    "nome": "Natural Peixe",
+    "valor_total": "233437.04"
+  },
+  {
+    "id": 31,
+    "nome": "Doce Carne",
+    "valor_total": "232465.00"
+  },
+  {
+    "id": 436,
+    "nome": "Doce Carne",
+    "valor_total": "231284.24"
+  },
+  {
+    "id": 49,
+    "nome": "Orgânico Carne",
+    "valor_total": "229026.77"
+  },
+  {
+    "id": 242,
+    "nome": "Suave Sabonete",
+    "valor_total": "225879.05"
+  },
+  {
+    "id": 261,
+    "nome": "Natural Detergente",
+    "valor_total": "225530.76"
+  },
+  {
+    "id": 1420,
+    "nome": "Ácido Arroz",
+    "valor_total": "223749.22"
+  },
+  {
+    "id": 373,
+    "nome": "Tradicional Iogurte",
+    "valor_total": "223431.38"
+  },
+  {
+    "id": 958,
+    "nome": "Orgânico Feijão",
+    "valor_total": "222362.00"
+  },
+  {
+    "id": 1025,
+    "nome": "Natural Suco",
+    "valor_total": "221971.26"
+  },
+  {
+    "id": 766,
+    "nome": "Delicioso Frango",
+    "valor_total": "221415.37"
+  },
+  {
+    "id": 1548,
+    "nome": "Doce Pão",
+    "valor_total": "219240.90"
+  },
+  {
+    "id": 1101,
+    "nome": "Ácido Pão",
+    "valor_total": "218673.92"
+  },
+  {
+    "id": 1363,
+    "nome": "Doce Suco",
+    "valor_total": "218597.10"
+  },
+  {
+    "id": 1520,
+    "nome": "Doce Feijão",
+    "valor_total": "218126.85"
+  },
+  {
+    "id": 629,
+    "nome": "Orgânico Arroz",
+    "valor_total": "217460.88"
+  },
+  {
+    "id": 878,
+    "nome": "Doce Detergente",
+    "valor_total": "217161.63"
+  },
+  {
+    "id": 731,
+    "nome": "Integral Feijão",
+    "valor_total": "217056.00"
+  },
+  {
+    "id": 572,
+    "nome": "Fresco Feijão",
+    "valor_total": "216607.05"
+  },
+  {
+    "id": 1808,
+    "nome": "Integral Arroz",
+    "valor_total": "216456.89"
+  },
+  {
+    "id": 986,
+    "nome": "Crocante Queijo",
+    "valor_total": "216204.30"
+  },
+  {
+    "id": 1103,
+    "nome": "Suave Pão",
+    "valor_total": "213494.67"
+  },
+  {
+    "id": 1619,
+    "nome": "Doce Manteiga",
+    "valor_total": "213461.16"
+  },
+  {
+    "id": 954,
+    "nome": "Delicioso Iogurte",
+    "valor_total": "209912.85"
+  },
+  {
+    "id": 848,
+    "nome": "Fresco Sabonete",
+    "valor_total": "209692.86"
+  },
+  {
+    "id": 565,
+    "nome": "Natural Iogurte",
+    "valor_total": "208287.31"
+  },
+  {
+    "id": 598,
+    "nome": "Suave Sabonete",
+    "valor_total": "208080.51"
+  },
+  {
+    "id": 1540,
+    "nome": "Orgânico Biscoito",
+    "valor_total": "207697.50"
+  },
+  {
+    "id": 1614,
+    "nome": "Doce Pão",
+    "valor_total": "206543.68"
+  },
+  {
+    "id": 1140,
+    "nome": "Suave Leite",
+    "valor_total": "205028.10"
+  },
+  {
+    "id": 1273,
+    "nome": "Delicioso Feijão",
+    "valor_total": "204740.25"
+  },
+  {
+    "id": 1659,
+    "nome": "Integral Leite",
+    "valor_total": "203823.36"
+  },
+  {
+    "id": 1202,
+    "nome": "Suave Iogurte",
+    "valor_total": "203720.44"
+  },
+  {
+    "id": 1498,
+    "nome": "Suave Pão",
+    "valor_total": "203006.45"
+  },
+  {
+    "id": 1473,
+    "nome": "Crocante Pão",
+    "valor_total": "202986.00"
+  },
+  {
+    "id": 1929,
+    "nome": "Delicioso Sabonete",
+    "valor_total": "201232.98"
+  },
+  {
+    "id": 1329,
+    "nome": "Premium Carne",
+    "valor_total": "201169.40"
+  },
+  {
+    "id": 1450,
+    "nome": "Delicioso Iogurte",
+    "valor_total": "200014.23"
+  },
+  {
+    "id": 1937,
+    "nome": "Ácido Arroz",
+    "valor_total": "199939.41"
+  },
+  {
+    "id": 1099,
+    "nome": "Delicioso Pão",
+    "valor_total": "198607.68"
+  },
+  {
+    "id": 248,
+    "nome": "Delicioso Carne",
+    "valor_total": "198459.18"
+  },
+  {
+    "id": 596,
+    "nome": "Orgânico Manteiga",
+    "valor_total": "197777.58"
+  },
+  {
+    "id": 1496,
+    "nome": "Tradicional Peixe",
+    "valor_total": "196901.88"
+  },
+  {
+    "id": 516,
+    "nome": "Tradicional Leite",
+    "valor_total": "196647.88"
+  },
+  {
+    "id": 1734,
+    "nome": "Tradicional Detergente",
+    "valor_total": "196519.50"
+  },
+  {
+    "id": 1476,
+    "nome": "Orgânico Biscoito",
+    "valor_total": "196380.32"
+  },
+  {
+    "id": 1970,
+    "nome": "Integral Queijo",
+    "valor_total": "195882.84"
+  },
+  {
+    "id": 1508,
+    "nome": "Natural Detergente",
+    "valor_total": "195857.85"
+  },
+  {
+    "id": 765,
+    "nome": "Crocante Carne",
+    "valor_total": "195116.46"
+  },
+  {
+    "id": 1511,
+    "nome": "Ácido Queijo",
+    "valor_total": "193713.66"
+  },
+  {
+    "id": 1825,
+    "nome": "Premium Queijo",
+    "valor_total": "192869.16"
+  },
+  {
+    "id": 1499,
+    "nome": "Premium Carne",
+    "valor_total": "192352.65"
+  },
+  {
+    "id": 1599,
+    "nome": "Premium Suco",
+    "valor_total": "192258.56"
+  },
+  {
+    "id": 1165,
+    "nome": "Fresco Suco",
+    "valor_total": "191390.08"
+  },
+  {
+    "id": 1236,
+    "nome": "Suave Peixe",
+    "valor_total": "190702.92"
+  },
+  {
+    "id": 497,
+    "nome": "Tradicional Iogurte",
+    "valor_total": "190159.96"
+  },
+  {
+    "id": 787,
+    "nome": "Delicioso Pão",
+    "valor_total": "189808.36"
+  },
+  {
+    "id": 170,
+    "nome": "Ácido Peixe",
+    "valor_total": "189433.20"
+  },
+  {
+    "id": 1186,
+    "nome": "Doce Peixe",
+    "valor_total": "189088.00"
+  },
+  {
+    "id": 1720,
+    "nome": "Doce Pão",
+    "valor_total": "189047.43"
+  },
+  {
+    "id": 1246,
+    "nome": "Suave Leite",
+    "valor_total": "188672.50"
+  },
+  {
+    "id": 1983,
+    "nome": "Delicioso Manteiga",
+    "valor_total": "188436.00"
+  },
+  {
+    "id": 827,
+    "nome": "Integral Pão",
+    "valor_total": "187872.15"
+  },
+  {
+    "id": 1036,
+    "nome": "Orgânico Queijo",
+    "valor_total": "187294.80"
+  },
+  {
+    "id": 852,
+    "nome": "Crocante Pão",
+    "valor_total": "186831.36"
+  },
+  {
+    "id": 737,
+    "nome": "Ácido Iogurte",
+    "valor_total": "186604.62"
+  },
+  {
+    "id": 609,
+    "nome": "Fresco Biscoito",
+    "valor_total": "186381.88"
+  },
+  {
+    "id": 982,
+    "nome": "Suave Carne",
+    "valor_total": "186365.34"
+  },
+  {
+    "id": 775,
+    "nome": "Doce Pão",
+    "valor_total": "185886.00"
+  },
+  {
+    "id": 1048,
+    "nome": "Premium Suco",
+    "valor_total": "185722.68"
+  },
+  {
+    "id": 1453,
+    "nome": "Integral Leite",
+    "valor_total": "185214.88"
+  },
+  {
+    "id": 1155,
+    "nome": "Premium Carne",
+    "valor_total": "185158.56"
+  },
+  {
+    "id": 1632,
+    "nome": "Doce Frango",
+    "valor_total": "184892.68"
+  },
+  {
+    "id": 779,
+    "nome": "Doce Pão",
+    "valor_total": "184356.21"
+  },
+  {
+    "id": 1503,
+    "nome": "Fresco Leite",
+    "valor_total": "183760.68"
+  },
+  {
+    "id": 1259,
+    "nome": "Premium Arroz",
+    "valor_total": "182371.36"
+  },
+  {
+    "id": 1623,
+    "nome": "Tradicional Frango",
+    "valor_total": "181383.52"
+  },
+  {
+    "id": 92,
+    "nome": "Doce Pão",
+    "valor_total": "181161.21"
+  },
+  {
+    "id": 590,
+    "nome": "Integral Peixe",
+    "valor_total": "180918.08"
+  },
+  {
+    "id": 1727,
+    "nome": "Premium Manteiga",
+    "valor_total": "180568.32"
+  },
+  {
+    "id": 1347,
+    "nome": "Natural Queijo",
+    "valor_total": "179960.40"
+  },
+  {
+    "id": 1148,
+    "nome": "Suave Queijo",
+    "valor_total": "179492.00"
+  },
+  {
+    "id": 1109,
+    "nome": "Doce Arroz",
+    "valor_total": "178719.48"
+  },
+  {
+    "id": 1533,
+    "nome": "Orgânico Carne",
+    "valor_total": "178582.12"
+  },
+  {
+    "id": 1930,
+    "nome": "Fresco Carne",
+    "valor_total": "178101.70"
+  },
+  {
+    "id": 1081,
+    "nome": "Fresco Arroz",
+    "valor_total": "178062.39"
+  },
+  {
+    "id": 1270,
+    "nome": "Orgânico Peixe",
+    "valor_total": "177967.60"
+  },
+  {
+    "id": 1446,
+    "nome": "Integral Frango",
+    "valor_total": "177618.84"
+  },
+  {
+    "id": 1452,
+    "nome": "Integral Arroz",
+    "valor_total": "177070.11"
+  },
+  {
+    "id": 846,
+    "nome": "Crocante Feijão",
+    "valor_total": "176602.59"
+  },
+  {
+    "id": 757,
+    "nome": "Crocante Peixe",
+    "valor_total": "176163.52"
+  },
+  {
+    "id": 698,
+    "nome": "Crocante Iogurte",
+    "valor_total": "176049.65"
+  },
+  {
+    "id": 379,
+    "nome": "Doce Feijão",
+    "valor_total": "175923.28"
+  },
+  {
+    "id": 1626,
+    "nome": "Orgânico Suco",
+    "valor_total": "175059.48"
+  }
+]

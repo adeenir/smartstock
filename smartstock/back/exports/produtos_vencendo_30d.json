@@ -1,0 +1,1028 @@
+[
+  {
+    "id": 621,
+    "nome": "Tradicional Pão",
+    "data_validade": "2026-05-05",
+    "quantidade": 160
+  },
+  {
+    "id": 1800,
+    "nome": "Integral Peixe",
+    "data_validade": "2026-05-05",
+    "quantidade": 491
+  },
+  {
+    "id": 799,
+    "nome": "Doce Biscoito",
+    "data_validade": "2026-05-05",
+    "quantidade": 454
+  },
+  {
+    "id": 208,
+    "nome": "Premium Leite",
+    "data_validade": "2026-05-06",
+    "quantidade": 471
+  },
+  {
+    "id": 1684,
+    "nome": "Ácido Peixe",
+    "data_validade": "2026-05-06",
+    "quantidade": 261
+  },
+  {
+    "id": 469,
+    "nome": "Fresco Feijão",
+    "data_validade": "2026-05-06",
+    "quantidade": 457
+  },
+  {
+    "id": 1640,
+    "nome": "Natural Pão",
+    "data_validade": "2026-05-06",
+    "quantidade": 353
+  },
+  {
+    "id": 1948,
+    "nome": "Delicioso Sabonete",
+    "data_validade": "2026-05-06",
+    "quantidade": 255
+  },
+  {
+    "id": 945,
+    "nome": "Doce Feijão",
+    "data_validade": "2026-05-06",
+    "quantidade": 258
+  },
+  {
+    "id": 180,
+    "nome": "Delicioso Leite",
+    "data_validade": "2026-05-06",
+    "quantidade": 235
+  },
+  {
+    "id": 353,
+    "nome": "Premium Iogurte",
+    "data_validade": "2026-05-07",
+    "quantidade": 497
+  },
+  {
+    "id": 873,
+    "nome": "Tradicional Feijão",
+    "data_validade": "2026-05-07",
+    "quantidade": 157
+  },
+  {
+    "id": 876,
+    "nome": "Crocante Arroz",
+    "data_validade": "2026-05-07",
+    "quantidade": 210
+  },
+  {
+    "id": 817,
+    "nome": "Doce Iogurte",
+    "data_validade": "2026-05-07",
+    "quantidade": 437
+  },
+  {
+    "id": 160,
+    "nome": "Doce Carne",
+    "data_validade": "2026-05-07",
+    "quantidade": 316
+  },
+  {
+    "id": 569,
+    "nome": "Ácido Carne",
+    "data_validade": "2026-05-07",
+    "quantidade": 386
+  },
+  {
+    "id": 709,
+    "nome": "Premium Peixe",
+    "data_validade": "2026-05-08",
+    "quantidade": 142
+  },
+  {
+    "id": 1198,
+    "nome": "Integral Manteiga",
+    "data_validade": "2026-05-08",
+    "quantidade": 77
+  },
+  {
+    "id": 1451,
+    "nome": "Tradicional Arroz",
+    "data_validade": "2026-05-08",
+    "quantidade": 179
+  },
+  {
+    "id": 255,
+    "nome": "Orgânico Suco",
+    "data_validade": "2026-05-08",
+    "quantidade": 269
+  },
+  {
+    "id": 907,
+    "nome": "Crocante Peixe",
+    "data_validade": "2026-05-08",
+    "quantidade": 115
+  },
+  {
+    "id": 1586,
+    "nome": "Delicioso Manteiga",
+    "data_validade": "2026-05-08",
+    "quantidade": 88
+  },
+  {
+    "id": 768,
+    "nome": "Fresco Pão",
+    "data_validade": "2026-05-08",
+    "quantidade": 90
+  },
+  {
+    "id": 1845,
+    "nome": "Premium Arroz",
+    "data_validade": "2026-05-08",
+    "quantidade": 16
+  },
+  {
+    "id": 1548,
+    "nome": "Doce Pão",
+    "data_validade": "2026-05-09",
+    "quantidade": 470
+  },
+  {
+    "id": 593,
+    "nome": "Delicioso Carne",
+    "data_validade": "2026-05-09",
+    "quantidade": 9
+  },
+  {
+    "id": 1098,
+    "nome": "Natural Manteiga",
+    "data_validade": "2026-05-09",
+    "quantidade": 171
+  },
+  {
+    "id": 1635,
+    "nome": "Delicioso Frango",
+    "data_validade": "2026-05-09",
+    "quantidade": 183
+  },
+  {
+    "id": 979,
+    "nome": "Fresco Biscoito",
+    "data_validade": "2026-05-09",
+    "quantidade": 208
+  },
+  {
+    "id": 1047,
+    "nome": "Integral Iogurte",
+    "data_validade": "2026-05-10",
+    "quantidade": 403
+  },
+  {
+    "id": 430,
+    "nome": "Orgânico Carne",
+    "data_validade": "2026-05-10",
+    "quantidade": 402
+  },
+  {
+    "id": 591,
+    "nome": "Tradicional Iogurte",
+    "data_validade": "2026-05-10",
+    "quantidade": 404
+  },
+  {
+    "id": 170,
+    "nome": "Ácido Peixe",
+    "data_validade": "2026-05-11",
+    "quantidade": 452
+  },
+  {
+    "id": 196,
+    "nome": "Crocante Feijão",
+    "data_validade": "2026-05-11",
+    "quantidade": 16
+  },
+  {
+    "id": 162,
+    "nome": "Tradicional Arroz",
+    "data_validade": "2026-05-11",
+    "quantidade": 339
+  },
+  {
+    "id": 482,
+    "nome": "Orgânico Queijo",
+    "data_validade": "2026-05-11",
+    "quantidade": 254
+  },
+  {
+    "id": 1673,
+    "nome": "Natural Frango",
+    "data_validade": "2026-05-11",
+    "quantidade": 208
+  },
+  {
+    "id": 687,
+    "nome": "Delicioso Feijão",
+    "data_validade": "2026-05-11",
+    "quantidade": 175
+  },
+  {
+    "id": 1434,
+    "nome": "Crocante Suco",
+    "data_validade": "2026-05-11",
+    "quantidade": 246
+  },
+  {
+    "id": 188,
+    "nome": "Fresco Leite",
+    "data_validade": "2026-05-11",
+    "quantidade": 408
+  },
+  {
+    "id": 1578,
+    "nome": "Ácido Frango",
+    "data_validade": "2026-05-12",
+    "quantidade": 165
+  },
+  {
+    "id": 338,
+    "nome": "Ácido Leite",
+    "data_validade": "2026-05-12",
+    "quantidade": 131
+  },
+  {
+    "id": 595,
+    "nome": "Suave Peixe",
+    "data_validade": "2026-05-12",
+    "quantidade": 446
+  },
+  {
+    "id": 1055,
+    "nome": "Crocante Suco",
+    "data_validade": "2026-05-12",
+    "quantidade": 442
+  },
+  {
+    "id": 90,
+    "nome": "Crocante Carne",
+    "data_validade": "2026-05-12",
+    "quantidade": 362
+  },
+  {
+    "id": 1894,
+    "nome": "Doce Leite",
+    "data_validade": "2026-05-13",
+    "quantidade": 342
+  },
+  {
+    "id": 1116,
+    "nome": "Crocante Suco",
+    "data_validade": "2026-05-13",
+    "quantidade": 2
+  },
+  {
+    "id": 253,
+    "nome": "Integral Carne",
+    "data_validade": "2026-05-13",
+    "quantidade": 334
+  },
+  {
+    "id": 332,
+    "nome": "Doce Frango",
+    "data_validade": "2026-05-13",
+    "quantidade": 320
+  },
+  {
+    "id": 1443,
+    "nome": "Doce Suco",
+    "data_validade": "2026-05-13",
+    "quantidade": 436
+  },
+  {
+    "id": 1746,
+    "nome": "Suave Suco",
+    "data_validade": "2026-05-13",
+    "quantidade": 366
+  },
+  {
+    "id": 1971,
+    "nome": "Ácido Leite",
+    "data_validade": "2026-05-14",
+    "quantidade": 165
+  },
+  {
+    "id": 755,
+    "nome": "Integral Manteiga",
+    "data_validade": "2026-05-14",
+    "quantidade": 342
+  },
+  {
+    "id": 1456,
+    "nome": "Doce Leite",
+    "data_validade": "2026-05-14",
+    "quantidade": 306
+  },
+  {
+    "id": 1539,
+    "nome": "Natural Leite",
+    "data_validade": "2026-05-14",
+    "quantidade": 428
+  },
+  {
+    "id": 1386,
+    "nome": "Fresco Iogurte",
+    "data_validade": "2026-05-14",
+    "quantidade": 154
+  },
+  {
+    "id": 1792,
+    "nome": "Integral Queijo",
+    "data_validade": "2026-05-14",
+    "quantidade": 190
+  },
+  {
+    "id": 1400,
+    "nome": "Natural Arroz",
+    "data_validade": "2026-05-14",
+    "quantidade": 409
+  },
+  {
+    "id": 1113,
+    "nome": "Ácido Manteiga",
+    "data_validade": "2026-05-15",
+    "quantidade": 37
+  },
+  {
+    "id": 695,
+    "nome": "Delicioso Queijo",
+    "data_validade": "2026-05-15",
+    "quantidade": 471
+  },
+  {
+    "id": 1817,
+    "nome": "Orgânico Carne",
+    "data_validade": "2026-05-15",
+    "quantidade": 400
+  },
+  {
+    "id": 500,
+    "nome": "Doce Frango",
+    "data_validade": "2026-05-15",
+    "quantidade": 256
+  },
+  {
+    "id": 1651,
+    "nome": "Premium Iogurte",
+    "data_validade": "2026-05-16",
+    "quantidade": 241
+  },
+  {
+    "id": 668,
+    "nome": "Natural Feijão",
+    "data_validade": "2026-05-16",
+    "quantidade": 430
+  },
+  {
+    "id": 485,
+    "nome": "Premium Sabonete",
+    "data_validade": "2026-05-16",
+    "quantidade": 334
+  },
+  {
+    "id": 210,
+    "nome": "Delicioso Suco",
+    "data_validade": "2026-05-16",
+    "quantidade": 340
+  },
+  {
+    "id": 1987,
+    "nome": "Fresco Manteiga",
+    "data_validade": "2026-05-17",
+    "quantidade": 51
+  },
+  {
+    "id": 476,
+    "nome": "Premium Peixe",
+    "data_validade": "2026-05-17",
+    "quantidade": 279
+  },
+  {
+    "id": 1102,
+    "nome": "Tradicional Frango",
+    "data_validade": "2026-05-17",
+    "quantidade": 122
+  },
+  {
+    "id": 412,
+    "nome": "Premium Suco",
+    "data_validade": "2026-05-17",
+    "quantidade": 276
+  },
+  {
+    "id": 1133,
+    "nome": "Ácido Frango",
+    "data_validade": "2026-05-18",
+    "quantidade": 307
+  },
+  {
+    "id": 1967,
+    "nome": "Integral Peixe",
+    "data_validade": "2026-05-18",
+    "quantidade": 306
+  },
+  {
+    "id": 249,
+    "nome": "Natural Iogurte",
+    "data_validade": "2026-05-18",
+    "quantidade": 239
+  },
+  {
+    "id": 505,
+    "nome": "Doce Carne",
+    "data_validade": "2026-05-18",
+    "quantidade": 459
+  },
+  {
+    "id": 1850,
+    "nome": "Integral Suco",
+    "data_validade": "2026-05-18",
+    "quantidade": 221
+  },
+  {
+    "id": 756,
+    "nome": "Tradicional Suco",
+    "data_validade": "2026-05-18",
+    "quantidade": 79
+  },
+  {
+    "id": 930,
+    "nome": "Suave Peixe",
+    "data_validade": "2026-05-18",
+    "quantidade": 367
+  },
+  {
+    "id": 1012,
+    "nome": "Tradicional Manteiga",
+    "data_validade": "2026-05-18",
+    "quantidade": 391
+  },
+  {
+    "id": 1564,
+    "nome": "Doce Iogurte",
+    "data_validade": "2026-05-18",
+    "quantidade": 123
+  },
+  {
+    "id": 1348,
+    "nome": "Integral Manteiga",
+    "data_validade": "2026-05-18",
+    "quantidade": 256
+  },
+  {
+    "id": 1599,
+    "nome": "Premium Suco",
+    "data_validade": "2026-05-19",
+    "quantidade": 436
+  },
+  {
+    "id": 1789,
+    "nome": "Delicioso Sabonete",
+    "data_validade": "2026-05-19",
+    "quantidade": 364
+  },
+  {
+    "id": 1475,
+    "nome": "Suave Carne",
+    "data_validade": "2026-05-19",
+    "quantidade": 154
+  },
+  {
+    "id": 516,
+    "nome": "Tradicional Leite",
+    "data_validade": "2026-05-20",
+    "quantidade": 403
+  },
+  {
+    "id": 1142,
+    "nome": "Delicioso Manteiga",
+    "data_validade": "2026-05-20",
+    "quantidade": 258
+  },
+  {
+    "id": 956,
+    "nome": "Delicioso Biscoito",
+    "data_validade": "2026-05-20",
+    "quantidade": 24
+  },
+  {
+    "id": 1887,
+    "nome": "Delicioso Frango",
+    "data_validade": "2026-05-20",
+    "quantidade": 358
+  },
+  {
+    "id": 1984,
+    "nome": "Ácido Frango",
+    "data_validade": "2026-05-21",
+    "quantidade": 329
+  },
+  {
+    "id": 1242,
+    "nome": "Premium Arroz",
+    "data_validade": "2026-05-21",
+    "quantidade": 199
+  },
+  {
+    "id": 928,
+    "nome": "Crocante Queijo",
+    "data_validade": "2026-05-21",
+    "quantidade": 383
+  },
+  {
+    "id": 1401,
+    "nome": "Orgânico Manteiga",
+    "data_validade": "2026-05-21",
+    "quantidade": 68
+  },
+  {
+    "id": 335,
+    "nome": "Tradicional Pão",
+    "data_validade": "2026-05-22",
+    "quantidade": 167
+  },
+  {
+    "id": 1893,
+    "nome": "Fresco Leite",
+    "data_validade": "2026-05-22",
+    "quantidade": 185
+  },
+  {
+    "id": 345,
+    "nome": "Integral Leite",
+    "data_validade": "2026-05-22",
+    "quantidade": 217
+  },
+  {
+    "id": 1512,
+    "nome": "Natural Suco",
+    "data_validade": "2026-05-22",
+    "quantidade": 393
+  },
+  {
+    "id": 1764,
+    "nome": "Natural Carne",
+    "data_validade": "2026-05-22",
+    "quantidade": 21
+  },
+  {
+    "id": 111,
+    "nome": "Doce Arroz",
+    "data_validade": "2026-05-23",
+    "quantidade": 178
+  },
+  {
+    "id": 620,
+    "nome": "Ácido Biscoito",
+    "data_validade": "2026-05-23",
+    "quantidade": 393
+  },
+  {
+    "id": 1994,
+    "nome": "Suave Sabonete",
+    "data_validade": "2026-05-23",
+    "quantidade": 158
+  },
+  {
+    "id": 685,
+    "nome": "Delicioso Peixe",
+    "data_validade": "2026-05-23",
+    "quantidade": 245
+  },
+  {
+    "id": 1556,
+    "nome": "Natural Arroz",
+    "data_validade": "2026-05-23",
+    "quantidade": 36
+  },
+  {
+    "id": 875,
+    "nome": "Natural Suco",
+    "data_validade": "2026-05-24",
+    "quantidade": 275
+  },
+  {
+    "id": 694,
+    "nome": "Fresco Manteiga",
+    "data_validade": "2026-05-24",
+    "quantidade": 371
+  },
+  {
+    "id": 1360,
+    "nome": "Suave Frango",
+    "data_validade": "2026-05-24",
+    "quantidade": 154
+  },
+  {
+    "id": 1435,
+    "nome": "Crocante Frango",
+    "data_validade": "2026-05-24",
+    "quantidade": 29
+  },
+  {
+    "id": 1896,
+    "nome": "Crocante Frango",
+    "data_validade": "2026-05-24",
+    "quantidade": 191
+  },
+  {
+    "id": 490,
+    "nome": "Ácido Leite",
+    "data_validade": "2026-05-24",
+    "quantidade": 178
+  },
+  {
+    "id": 1465,
+    "nome": "Suave Biscoito",
+    "data_validade": "2026-05-25",
+    "quantidade": 154
+  },
+  {
+    "id": 181,
+    "nome": "Crocante Sabonete",
+    "data_validade": "2026-05-25",
+    "quantidade": 63
+  },
+  {
+    "id": 1499,
+    "nome": "Premium Carne",
+    "data_validade": "2026-05-25",
+    "quantidade": 435
+  },
+  {
+    "id": 988,
+    "nome": "Orgânico Arroz",
+    "data_validade": "2026-05-26",
+    "quantidade": 47
+  },
+  {
+    "id": 736,
+    "nome": "Crocante Iogurte",
+    "data_validade": "2026-05-26",
+    "quantidade": 297
+  },
+  {
+    "id": 1957,
+    "nome": "Crocante Sabonete",
+    "data_validade": "2026-05-26",
+    "quantidade": 276
+  },
+  {
+    "id": 212,
+    "nome": "Suave Detergente",
+    "data_validade": "2026-05-26",
+    "quantidade": 253
+  },
+  {
+    "id": 159,
+    "nome": "Orgânico Carne",
+    "data_validade": "2026-05-26",
+    "quantidade": 180
+  },
+  {
+    "id": 154,
+    "nome": "Integral Sabonete",
+    "data_validade": "2026-05-26",
+    "quantidade": 186
+  },
+  {
+    "id": 1796,
+    "nome": "Suave Biscoito",
+    "data_validade": "2026-05-26",
+    "quantidade": 394
+  },
+  {
+    "id": 1786,
+    "nome": "Delicioso Frango",
+    "data_validade": "2026-05-27",
+    "quantidade": 310
+  },
+  {
+    "id": 724,
+    "nome": "Integral Suco",
+    "data_validade": "2026-05-27",
+    "quantidade": 241
+  },
+  {
+    "id": 284,
+    "nome": "Orgânico Leite",
+    "data_validade": "2026-05-27",
+    "quantidade": 148
+  },
+  {
+    "id": 62,
+    "nome": "Ácido Manteiga",
+    "data_validade": "2026-05-28",
+    "quantidade": 396
+  },
+  {
+    "id": 88,
+    "nome": "Doce Sabonete",
+    "data_validade": "2026-05-28",
+    "quantidade": 51
+  },
+  {
+    "id": 222,
+    "nome": "Delicioso Biscoito",
+    "data_validade": "2026-05-28",
+    "quantidade": 497
+  },
+  {
+    "id": 666,
+    "nome": "Natural Suco",
+    "data_validade": "2026-05-28",
+    "quantidade": 329
+  },
+  {
+    "id": 1052,
+    "nome": "Natural Feijão",
+    "data_validade": "2026-05-28",
+    "quantidade": 406
+  },
+  {
+    "id": 1629,
+    "nome": "Ácido Queijo",
+    "data_validade": "2026-05-28",
+    "quantidade": 27
+  },
+  {
+    "id": 1897,
+    "nome": "Delicioso Peixe",
+    "data_validade": "2026-05-28",
+    "quantidade": 289
+  },
+  {
+    "id": 955,
+    "nome": "Tradicional Pão",
+    "data_validade": "2026-05-29",
+    "quantidade": 418
+  },
+  {
+    "id": 421,
+    "nome": "Fresco Manteiga",
+    "data_validade": "2026-05-29",
+    "quantidade": 426
+  },
+  {
+    "id": 1100,
+    "nome": "Orgânico Manteiga",
+    "data_validade": "2026-05-29",
+    "quantidade": 457
+  },
+  {
+    "id": 1779,
+    "nome": "Delicioso Peixe",
+    "data_validade": "2026-05-30",
+    "quantidade": 323
+  },
+  {
+    "id": 1131,
+    "nome": "Fresco Pão",
+    "data_validade": "2026-05-30",
+    "quantidade": 140
+  },
+  {
+    "id": 1667,
+    "nome": "Natural Carne",
+    "data_validade": "2026-05-30",
+    "quantidade": 83
+  },
+  {
+    "id": 924,
+    "nome": "Delicioso Queijo",
+    "data_validade": "2026-05-30",
+    "quantidade": 328
+  },
+  {
+    "id": 221,
+    "nome": "Ácido Biscoito",
+    "data_validade": "2026-05-31",
+    "quantidade": 389
+  },
+  {
+    "id": 112,
+    "nome": "Delicioso Iogurte",
+    "data_validade": "2026-05-31",
+    "quantidade": 386
+  },
+  {
+    "id": 287,
+    "nome": "Premium Queijo",
+    "data_validade": "2026-05-31",
+    "quantidade": 154
+  },
+  {
+    "id": 538,
+    "nome": "Fresco Feijão",
+    "data_validade": "2026-05-31",
+    "quantidade": 166
+  },
+  {
+    "id": 1886,
+    "nome": "Natural Carne",
+    "data_validade": "2026-05-31",
+    "quantidade": 22
+  },
+  {
+    "id": 731,
+    "nome": "Integral Feijão",
+    "data_validade": "2026-05-31",
+    "quantidade": 475
+  },
+  {
+    "id": 1152,
+    "nome": "Suave Leite",
+    "data_validade": "2026-06-01",
+    "quantidade": 371
+  },
+  {
+    "id": 389,
+    "nome": "Suave Frango",
+    "data_validade": "2026-06-01",
+    "quantidade": 396
+  },
+  {
+    "id": 1016,
+    "nome": "Suave Leite",
+    "data_validade": "2026-06-01",
+    "quantidade": 72
+  },
+  {
+    "id": 1637,
+    "nome": "Ácido Feijão",
+    "data_validade": "2026-06-01",
+    "quantidade": 443
+  },
+  {
+    "id": 1522,
+    "nome": "Natural Feijão",
+    "data_validade": "2026-06-01",
+    "quantidade": 216
+  },
+  {
+    "id": 1732,
+    "nome": "Orgânico Peixe",
+    "data_validade": "2026-06-01",
+    "quantidade": 428
+  },
+  {
+    "id": 374,
+    "nome": "Tradicional Carne",
+    "data_validade": "2026-06-01",
+    "quantidade": 419
+  },
+  {
+    "id": 142,
+    "nome": "Natural Queijo",
+    "data_validade": "2026-06-01",
+    "quantidade": 457
+  },
+  {
+    "id": 1344,
+    "nome": "Orgânico Sabonete",
+    "data_validade": "2026-06-02",
+    "quantidade": 12
+  },
+  {
+    "id": 989,
+    "nome": "Doce Peixe",
+    "data_validade": "2026-06-02",
+    "quantidade": 31
+  },
+  {
+    "id": 752,
+    "nome": "Premium Queijo",
+    "data_validade": "2026-06-02",
+    "quantidade": 422
+  },
+  {
+    "id": 1094,
+    "nome": "Natural Iogurte",
+    "data_validade": "2026-06-02",
+    "quantidade": 159
+  },
+  {
+    "id": 1683,
+    "nome": "Doce Iogurte",
+    "data_validade": "2026-06-02",
+    "quantidade": 167
+  },
+  {
+    "id": 1095,
+    "nome": "Suave Manteiga",
+    "data_validade": "2026-06-02",
+    "quantidade": 248
+  },
+  {
+    "id": 223,
+    "nome": "Natural Manteiga",
+    "data_validade": "2026-06-02",
+    "quantidade": 27
+  },
+  {
+    "id": 1218,
+    "nome": "Ácido Arroz",
+    "data_validade": "2026-06-03",
+    "quantidade": 36
+  },
+  {
+    "id": 885,
+    "nome": "Doce Iogurte",
+    "data_validade": "2026-06-03",
+    "quantidade": 249
+  },
+  {
+    "id": 763,
+    "nome": "Suave Feijão",
+    "data_validade": "2026-06-03",
+    "quantidade": 263
+  },
+  {
+    "id": 634,
+    "nome": "Delicioso Leite",
+    "data_validade": "2026-06-03",
+    "quantidade": 164
+  },
+  {
+    "id": 612,
+    "nome": "Doce Pão",
+    "data_validade": "2026-06-03",
+    "quantidade": 62
+  },
+  {
+    "id": 527,
+    "nome": "Natural Manteiga",
+    "data_validade": "2026-06-03",
+    "quantidade": 129
+  },
+  {
+    "id": 94,
+    "nome": "Ácido Detergente",
+    "data_validade": "2026-06-03",
+    "quantidade": 397
+  },
+  {
+    "id": 662,
+    "nome": "Fresco Sabonete",
+    "data_validade": "2026-06-04",
+    "quantidade": 5
+  },
+  {
+    "id": 1201,
+    "nome": "Natural Queijo",
+    "data_validade": "2026-06-04",
+    "quantidade": 127
+  },
+  {
+    "id": 744,
+    "nome": "Fresco Feijão",
+    "data_validade": "2026-06-04",
+    "quantidade": 336
+  },
+  {
+    "id": 256,
+    "nome": "Ácido Pão",
+    "data_validade": "2026-06-04",
+    "quantidade": 436
+  },
+  {
+    "id": 844,
+    "nome": "Crocante Detergente",
+    "data_validade": "2026-06-04",
+    "quantidade": 206
+  },
+  {
+    "id": 1687,
+    "nome": "Integral Leite",
+    "data_validade": "2026-06-04",
+    "quantidade": 190
+  },
+  {
+    "id": 1148,
+    "nome": "Suave Queijo",
+    "data_validade": "2026-06-04",
+    "quantidade": 460
+  },
+  {
+    "id": 1155,
+    "nome": "Premium Carne",
+    "data_validade": "2026-06-04",
+    "quantidade": 408
+  },
+  {
+    "id": 467,
+    "nome": "Orgânico Iogurte",
+    "data_validade": "2026-06-04",
+    "quantidade": 407
+  }
+]

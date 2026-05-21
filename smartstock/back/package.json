@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate": "sequelize-cli db:migrate --config src/database/config/config.js",
     "db:migrate:undo": "sequelize-cli db:migrate:undo --config src/database/config/config.js",
-    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all --config src/database/config/config.js"
+    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all --config src/database/config/config.js",
+    "db:seed": "node src/database/seeders/seed.js",
+    "bi:export": "node scripts/export_bi.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,8 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.0",
+    "@faker-js/faker": "^8.0.2"
   }
 }

@@ -5,7 +5,10 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Usuario extends Model {
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Localidade, {
+        foreignKey: 'localidadeId',
+        as: 'localidade'
+      });
     }
   }
   Usuario.init({
@@ -13,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     email: { type: DataTypes.STRING, allowNull: false },
     senha: { type: DataTypes.STRING, allowNull: false },
     resetToken: { type: DataTypes.STRING, allowNull: true },
-    resetTokenExpiration: { type: DataTypes.DATE, allowNull: true }
+    resetTokenExpiration: { type: DataTypes.DATE, allowNull: true },
+    localidadeId: { type: DataTypes.INTEGER, allowNull: true }
   }, {
     sequelize,
     modelName: 'Usuario',

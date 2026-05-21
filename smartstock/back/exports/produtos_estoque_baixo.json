@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1755,
+    "nome": "Crocante Feijão",
+    "quantidade": 0
+  },
+  {
+    "id": 1589,
+    "nome": "Premium Arroz",
+    "quantidade": 0
+  },
+  {
+    "id": 1406,
+    "nome": "Crocante Frango",
+    "quantidade": 0
+  },
+  {
+    "id": 1857,
+    "nome": "Orgânico Frango",
+    "quantidade": 0
+  },
+  {
+    "id": 618,
+    "nome": "Crocante Detergente",
+    "quantidade": 0
+  },
+  {
+    "id": 894,
+    "nome": "Doce Queijo",
+    "quantidade": 0
+  },
+  {
+    "id": 1612,
+    "nome": "Natural Manteiga",
+    "quantidade": 1
+  },
+  {
+    "id": 179,
+    "nome": "Integral Detergente",
+    "quantidade": 1
+  },
+  {
+    "id": 1395,
+    "nome": "Delicioso Frango",
+    "quantidade": 1
+  },
+  {
+    "id": 1815,
+    "nome": "Integral Manteiga",
+    "quantidade": 1
+  },
+  {
+    "id": 452,
+    "nome": "Suave Iogurte",
+    "quantidade": 1
+  },
+  {
+    "id": 1116,
+    "nome": "Crocante Suco",
+    "quantidade": 2
+  },
+  {
+    "id": 504,
+    "nome": "Premium Frango",
+    "quantidade": 2
+  },
+  {
+    "id": 810,
+    "nome": "Tradicional Manteiga",
+    "quantidade": 2
+  },
+  {
+    "id": 967,
+    "nome": "Tradicional Carne",
+    "quantidade": 2
+  },
+  {
+    "id": 973,
+    "nome": "Doce Arroz",
+    "quantidade": 2
+  },
+  {
+    "id": 1592,
+    "nome": "Delicioso Biscoito",
+    "quantidade": 2
+  },
+  {
+    "id": 1649,
+    "nome": "Natural Leite",
+    "quantidade": 2
+  },
+  {
+    "id": 1715,
+    "nome": "Crocante Manteiga",
+    "quantidade": 2
+  },
+  {
+    "id": 919,
+    "nome": "Crocante Peixe",
+    "quantidade": 3
+  },
+  {
+    "id": 392,
+    "nome": "Suave Arroz",
+    "quantidade": 3
+  },
+  {
+    "id": 1855,
+    "nome": "Crocante Feijão",
+    "quantidade": 3
+  },
+  {
+    "id": 266,
+    "nome": "Delicioso Leite",
+    "quantidade": 3
+  },
+  {
+    "id": 990,
+    "nome": "Tradicional Manteiga",
+    "quantidade": 4
+  },
+  {
+    "id": 1860,
+    "nome": "Orgânico Suco",
+    "quantidade": 4
+  },
+  {
+    "id": 393,
+    "nome": "Delicioso Feijão",
+    "quantidade": 4
+  },
+  {
+    "id": 1762,
+    "nome": "Tradicional Sabonete",
+    "quantidade": 4
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "usuario_id": 7,
+    "qtd_produtos": "29"
+  },
+  {
+    "usuario_id": 21,
+    "qtd_produtos": "28"
+  },
+  {
+    "usuario_id": 12,
+    "qtd_produtos": "28"
+  },
+  {
+    "usuario_id": 19,
+    "qtd_produtos": "28"
+  },
+  {
+    "usuario_id": 11,
+    "qtd_produtos": "28"
+  },
+  {
+    "usuario_id": 89,
+    "qtd_produtos": "27"
+  },
+  {
+    "usuario_id": 71,
+    "qtd_produtos": "27"
+  },
+  {
+    "usuario_id": 100,
+    "qtd_produtos": "27"
+  },
+  {
+    "usuario_id": 86,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 74,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 38,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 36,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 46,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 76,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 37,
+    "qtd_produtos": "26"
+  },
+  {
+    "usuario_id": 28,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 2,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 82,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 48,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 70,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 78,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 40,
+    "qtd_produtos": "25"
+  },
+  {
+    "usuario_id": 94,
+    "qtd_produtos": "24"
+  },
+  {
+    "usuario_id": 24,
+    "qtd_produtos": "24"
+  },
+  {
+    "usuario_id": 84,
+    "qtd_produtos": "24"
+  },
+  {
+    "usuario_id": 1,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 47,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 30,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 34,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 69,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 23,
+    "qtd_produtos": "23"
+  },
+  {
+    "usuario_id": 35,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 83,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 27,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 80,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 4,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 8,
+    "qtd_produtos": "22"
+  },
+  {
+    "usuario_id": 72,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 55,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 93,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 95,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 51,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 99,
+    "qtd_produtos": "21"
+  },
+  {
+    "usuario_id": 45,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 79,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 60,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 73,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 32,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 90,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 62,
+    "qtd_produtos": "20"
+  },
+  {
+    "usuario_id": 98,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 14,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 66,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 16,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 75,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 44,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 15,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 26,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 85,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 61,
+    "qtd_produtos": "19"
+  },
+  {
+    "usuario_id": 25,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 17,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 54,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 97,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 31,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 5,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 39,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 6,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 67,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 52,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 81,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 64,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 20,
+    "qtd_produtos": "18"
+  },
+  {
+    "usuario_id": 42,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 22,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 59,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 41,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 57,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 9,
+    "qtd_produtos": "17"
+  },
+  {
+    "usuario_id": 50,
+    "qtd_produtos": "16"
+  },
+  {
+    "usuario_id": 77,
+    "qtd_produtos": "16"
+  },
+  {
+    "usuario_id": 91,
+    "qtd_produtos": "16"
+  },
+  {
+    "usuario_id": 10,
+    "qtd_produtos": "16"
+  },
+  {
+    "usuario_id": 63,
+    "qtd_produtos": "16"
+  },
+  {
+    "usuario_id": 13,
+    "qtd_produtos": "15"
+  },
+  {
+    "usuario_id": 53,
+    "qtd_produtos": "15"
+  },
+  {
+    "usuario_id": 92,
+    "qtd_produtos": "15"
+  },
+  {
+    "usuario_id": 29,
+    "qtd_produtos": "15"
+  },
+  {
+    "usuario_id": 3,
+    "qtd_produtos": "14"
+  },
+  {
+    "usuario_id": 68,
+    "qtd_produtos": "13"
+  },
+  {
+    "usuario_id": 96,
+    "qtd_produtos": "13"
+  },
+  {
+    "usuario_id": 87,
+    "qtd_produtos": "13"
+  },
+  {
+    "usuario_id": 88,
+    "qtd_produtos": "13"
+  },
+  {
+    "usuario_id": 58,
+    "qtd_produtos": "13"
+  },
+  {
+    "usuario_id": 65,
+    "qtd_produtos": "12"
+  },
+  {
+    "usuario_id": 56,
+    "qtd_produtos": "12"
+  },
+  {
+    "usuario_id": 43,
+    "qtd_produtos": "12"
+  },
+  {
+    "usuario_id": 49,
+    "qtd_produtos": "11"
+  },
+  {
+    "usuario_id": 18,
+    "qtd_produtos": "11"
+  },
+  {
+    "usuario_id": 33,
+    "qtd_produtos": "10"
+  }
+]
