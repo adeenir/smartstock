@@ -39,6 +39,10 @@ try {
 const settingsRoutes = require("./src/routes/settingsRoutes");
 app.use("/api/settings", settingsRoutes);
 
+// Rotas de dashboards analiticos
+const dashboardRoutes = require("./src/routes/dashboardRoutes");
+app.use("/api/dashboards", dashboardRoutes);
+
 const PORT = process.env.PORT || 3000;
 
 app.get("/api/hello", (req, res) => {

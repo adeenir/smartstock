@@ -3,39 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="estilo/index.css">
-    <title>SmartStock</title>
+    <title>SmartStock Dashboards</title>
 </head>
 <body>
-    <!--Podem editar o formato e a estilização do HTML como quiserem-->
-    <header>
-        <h1>Seja bem vindo ao site do aplicativo SmartStock</h1>
+    <div class="bg-glow bg-glow-a"></div>
+    <div class="bg-glow bg-glow-b"></div>
+
+    <header class="hero">
+        <p class="kicker">SmartStock Analytics</p>
+        <h1>Dashboards operacionais por localidade e regiao</h1>
+        <p class="subtitle">Monitoramento de notificacoes, risco de vencimento, valor em estoque e qualidade cadastral com base nas consultas do projeto.</p>
+
+        <div class="api-toolbar">
+            <label for="apiBase">Base da API</label>
+            <input id="apiBase" type="text" value="http://localhost:3000/api/dashboards" />
+            <button id="reloadBtn" type="button">Atualizar dashboards</button>
+            <span id="statusPill" class="status-pill">Aguardando carga...</span>
+        </div>
     </header>
 
-    <nav>
-        <h1>Selecione o dashboard que você deseja:</h1>
-        <a href="#FNPR">Notificações Pendentes</a>
-        <a href="#LMCA">Compras de Alimentos</a>
-        <a href="#LMPV">Produtos Vencendo</a>
-        <a href="#PCCBL">Percentual de cadastro via código de barras</a>
-        <a href="#VTEL">Valor total por estoque</a>
-        <a href="#CCL">Categorias mais cadastradas</a>
-    </nav>
+    <main class="dashboard-layout">
+        <section class="dashboard-grid">
+            <section class="card" id="notificacoes-pendentes-por-regiao">
+                <div class="card-header">
+                    <h2>Fila de notificacoes pendentes por regiao</h2>
+                    <p>Total de notificacoes e percentual nao lidas.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-notificacoes"></canvas></div>
+                <div id="table-notificacoes" class="table-wrap"></div>
+            </section>
 
-    <h2 id="FNPR">Fila de notificações pendentes por região</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis tempora esse, aliquam perspiciatis saepe alias cumque harum ad laborum rem dicta laudantium ullam eligendi deleniti tenetur, porro tempore labore optio.</p>
+            <section class="card" id="localidades-mais-alimentos">
+                <div class="card-header">
+                    <h2>Localidades que mais compraram alimentos</h2>
+                    <p>Volume por cidade e total de usuarios compradores.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-alimentos"></canvas></div>
+                <div id="table-alimentos" class="table-wrap"></div>
+            </section>
 
-    <h2 id="LMCA">Localidades que mais compraram alimentos</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae pariatur minima officia delectus mollitia numquam est dolores dicta doloremque alias, rem accusamus velit. In temporibus enim voluptatem adipisci vel.</p>
-    <h2 id="LMPV">Localidades com mais produtos vencendo</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic rerum quibusdam atque dolorum, molestiae laboriosam, animi nobis dignissimos, error dicta saepe omnis? Corporis, ipsum incidunt mollitia eligendi quos dolorum eveniet.</p>
-    <h2 id="PCCBL">Percentual de cadastro via código de barras por localidade</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolores modi distinctio itaque? Explicabo sapiente aperiam saepe. Doloribus, expedita sed nulla est corporis nobis possimus assumenda sunt ratione ipsa hic.</p>
-    <h2 id="VTEL">Valor total do estoque por localidade</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam quo explicabo non voluptas nostrum, tempora accusantium! Architecto sapiente beatae assumenda recusandae aliquid. Maiores omnis, iusto aut reprehenderit amet exercitationem quas?</p>
-    <h2 id="CCL">Categorias mais cadastradas por localidade</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi totam, fugit dolor aliquid impedit aut ab iusto ipsa eveniet doloribus quia amet facere necessitatibus? Rerum et in consequuntur nisi quibusdam.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia ea voluptas, ipsum libero est, illum quidem expedita itaque repellat autem laudantium, tenetur dolor delectus temporibus labore molestias maxime enim sapiente!</p>
+            <section class="card" id="localidades-produtos-vencendo">
+                <div class="card-header">
+                    <h2>Localidades com mais produtos vencendo</h2>
+                    <p>Valor em risco e quantidade em estoque para os proximos 30 dias.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-vencendo"></canvas></div>
+                <div id="table-vencendo" class="table-wrap"></div>
+            </section>
 
+            <section class="card" id="percentual-codigo-barras-por-localidade">
+                <div class="card-header">
+                    <h2>Percentual de cadastro via codigo de barras</h2>
+                    <p>Efetividade de preenchimento por localidade.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-codigo"></canvas></div>
+                <div id="table-codigo" class="table-wrap"></div>
+            </section>
+
+            <section class="card" id="valor-total-estoque-por-localidade">
+                <div class="card-header">
+                    <h2>Valor total do estoque por localidade</h2>
+                    <p>Capital imobilizado, usuarios e volume de produtos.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-estoque"></canvas></div>
+                <div id="table-estoque" class="table-wrap"></div>
+            </section>
+
+            <section class="card" id="categorias-por-localidade">
+                <div class="card-header">
+                    <h2>Categorias mais cadastradas por localidade</h2>
+                    <p>Participacao percentual de categoria dentro da localidade.</p>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-categorias"></canvas></div>
+                <div id="table-categorias" class="table-wrap"></div>
+            </section>
+        </section>
+
+        <section class="map-section">
+            <section class="card card-map" id="mapa-localidades-mais-itens">
+                <div class="card-header">
+                    <h2>Mapa de localidades com mais itens</h2>
+                    <p>Bolhas maiores representam cidades com maior quantidade total de itens em estoque.</p>
+                </div>
+                <div id="map-localidades" class="map-wrap"></div>
+                <div id="table-mapa-localidades" class="table-wrap"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
